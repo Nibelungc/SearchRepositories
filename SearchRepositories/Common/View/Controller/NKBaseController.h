@@ -1,5 +1,5 @@
 //
-//  NKSearchController.h
+//  NKBaseController.h
 //  SearchRepositories
 //
 //  Created by Nikolay Kagala on 11/07/16.
@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NKBaseController.h"
-#import "NKSearchViewOutput.h"
+#import "NKViewInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NKSearchController : NKBaseController <NKSearchViewOutput>
+@protocol NKViewOutput;
+
+@interface NKBaseController : UIViewController <NKViewInput>
+
+@property (strong, nonatomic) id <NKViewOutput> presenter;
 
 @end
 
