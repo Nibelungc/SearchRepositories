@@ -19,9 +19,13 @@
 		806B2EF31D33391900410910 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EED1D33391900410910 /* star@2x.png */; };
 		806B2EF41D33391900410910 /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EEE1D33391900410910 /* star@3x.png */; };
 		806B2EF61D33393100410910 /* Octocat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EF51D33393100410910 /* Octocat@3x.png */; };
+		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SearchRepositories.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F1098CA1B5F9743A297230 /* Pods-SearchRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories.release.xcconfig"; sourceTree = "<group>"; };
+		7DD7F36D5F910FFC4656D7CE /* Pods-SearchRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchRepositories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories.debug.xcconfig"; sourceTree = "<group>"; };
 		806B2EA61D33317B00410910 /* SearchRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806B2EAA1D33317B00410910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		806B2EAC1D33317B00410910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,8 @@
 			children = (
 				806B2EA81D33317B00410910 /* SearchRepositories */,
 				806B2EA71D33317B00410910 /* Products */,
+				DD6CE8F4647BF10C9B4FAA92 /* Pods */,
+				BC5EE4ACC9D90E733C97FA3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +238,23 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		BC5EE4ACC9D90E733C97FA3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD6CE8F4647BF10C9B4FAA92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DD7F36D5F910FFC4656D7CE /* Pods-SearchRepositories.debug.xcconfig */,
+				29F1098CA1B5F9743A297230 /* Pods-SearchRepositories.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,9 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 806B2EBD1D33317B00410910 /* Build configuration list for PBXNativeTarget "SearchRepositories" */;
 			buildPhases = (
+				E8E883FCFDBF648463AAA508 /* [CP] Check Pods Manifest.lock */,
 				806B2EA21D33317B00410910 /* Sources */,
 				806B2EA31D33317B00410910 /* Frameworks */,
 				806B2EA41D33317B00410910 /* Resources */,
+				3EE74868B6BE573C32885FFF /* [CP] Embed Pods Frameworks */,
+				A71C36AD7C2BBF06990063A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +330,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EE74868B6BE573C32885FFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A71C36AD7C2BBF06990063A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SearchRepositories/Pods-SearchRepositories-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E883FCFDBF648463AAA508 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		806B2EA21D33317B00410910 /* Sources */ = {
@@ -424,6 +499,7 @@
 		};
 		806B2EBE1D33317B00410910 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD7F36D5F910FFC4656D7CE /* Pods-SearchRepositories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SearchRepositories/Supporting Files/Info.plist";
@@ -436,6 +512,7 @@
 		};
 		806B2EBF1D33317B00410910 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F1098CA1B5F9743A297230 /* Pods-SearchRepositories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SearchRepositories/Supporting Files/Info.plist";
