@@ -45,7 +45,7 @@
         <!--Search-->
         <scene sceneID="xkZ-2p-tk0">
             <objects>
-                <viewController id="Fn0-Pu-Ixd" customClass="NKSearchController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fn0-Pu-Ixd" customClass="NKSearchController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YwI-nO-INi"/>
                         <viewControllerLayoutGuide type="bottom" id="3nf-Lr-uz0"/>
@@ -53,7 +53,32 @@
                     <view key="view" contentMode="scaleToFill" id="M9J-IH-Oqe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Find repository..." translatesAutoresizingMaskIntoConstraints="NO" id="UwZ-Rc-Nng">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyp-RI-INA">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3nf-Lr-uz0" firstAttribute="top" secondItem="cyp-RI-INA" secondAttribute="bottom" id="1UW-pC-7gP"/>
+                            <constraint firstAttribute="trailing" secondItem="cyp-RI-INA" secondAttribute="trailing" id="4hG-tk-JD7"/>
+                            <constraint firstItem="cyp-RI-INA" firstAttribute="top" secondItem="YwI-nO-INi" secondAttribute="bottom" id="8XZ-iz-eNU"/>
+                            <constraint firstItem="cyp-RI-INA" firstAttribute="leading" secondItem="M9J-IH-Oqe" secondAttribute="leading" id="GWU-BE-Xu1"/>
+                            <constraint firstAttribute="trailing" secondItem="UwZ-Rc-Nng" secondAttribute="trailing" id="Gqc-hS-A8Q"/>
+                            <constraint firstItem="cyp-RI-INA" firstAttribute="top" secondItem="UwZ-Rc-Nng" secondAttribute="bottom" id="HgL-TR-aMA"/>
+                            <constraint firstItem="UwZ-Rc-Nng" firstAttribute="top" secondItem="YwI-nO-INi" secondAttribute="bottom" id="nXy-4N-jO9"/>
+                            <constraint firstItem="UwZ-Rc-Nng" firstAttribute="leading" secondItem="M9J-IH-Oqe" secondAttribute="leading" id="p3I-a1-oA8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8XZ-iz-eNU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="yMt-E7-Vfg"/>
                 </viewController>
@@ -64,7 +89,7 @@
         <!--Favorites-->
         <scene sceneID="ftn-0F-pev">
             <objects>
-                <viewController id="g3Z-GM-aau" customClass="NKFavoritesController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="g3Z-GM-aau" customClass="NKFavoritesController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1x4-Be-flU"/>
                         <viewControllerLayoutGuide type="bottom" id="rIw-ae-P4G"/>
@@ -72,7 +97,19 @@
                     <view key="view" contentMode="scaleToFill" id="4QZ-NV-nS2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ogn-aZ-2CJ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rIw-ae-P4G" firstAttribute="top" secondItem="Ogn-aZ-2CJ" secondAttribute="bottom" id="InL-Q7-r18"/>
+                            <constraint firstItem="Ogn-aZ-2CJ" firstAttribute="leading" secondItem="4QZ-NV-nS2" secondAttribute="leading" id="RWV-tl-vCP"/>
+                            <constraint firstAttribute="trailing" secondItem="Ogn-aZ-2CJ" secondAttribute="trailing" id="Vjo-Ll-nhz"/>
+                            <constraint firstItem="Ogn-aZ-2CJ" firstAttribute="top" secondItem="1x4-Be-flU" secondAttribute="bottom" id="d6F-xS-2r3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="hG6-0u-wpV"/>
                 </viewController>
