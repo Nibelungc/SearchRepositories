@@ -37,7 +37,9 @@
          if (!error){
              [self.view didFinishSearchWithResults:results];
          } else {
-             [self.view didFailSearchWithError:error];
+             if (error.code != NSURLErrorCancelled){
+                 [self.view didFailSearchWithError:error];
+             }
          }
      }];
 }

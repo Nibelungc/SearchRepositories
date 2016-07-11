@@ -38,10 +38,11 @@ static NSString * const kRepositoryPath = @"repositories";
                      request:requestString
                    parametrs:nil
                   completion:^(id  _Nullable json, NSError * _Nullable error) {
+                      NSError *parseError = nil;
                       NSArray<NKRepository *>*results = [MTLJSONAdapter modelsOfClass:[NKRepository class]
                                                                         fromJSONArray:json[@"items"]
-                                                                                error:&error];
-                      completion(results, error);
+                                                                                error:&parseError];
+                      completion(results, error?:parseError);
                   }];
     [self.currentDataTask resume];
 }
