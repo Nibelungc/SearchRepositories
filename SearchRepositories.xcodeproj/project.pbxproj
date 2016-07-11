@@ -28,6 +28,8 @@
 		806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F1F1D338F1700410910 /* NKSearchAssembly.m */; };
 		80D2DAA21D3393D900D37BC7 /* NKAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAA11D3393D900D37BC7 /* NKAPIService.m */; };
 		80D2DAAB1D33ACF500D37BC7 /* NKAPISearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */; };
+		80D2DAB01D33C7EC00D37BC7 /* NKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAAF1D33C7EC00D37BC7 /* NKRepository.m */; };
+		80D2DAB41D33D05300D37BC7 /* NSArray+SQExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAB31D33D05300D37BC7 /* NSArray+SQExtended.m */; };
 		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,10 @@
 		80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchService.h; sourceTree = "<group>"; };
 		80D2DAA91D33ACF500D37BC7 /* NKAPISearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKAPISearchService.h; sourceTree = "<group>"; };
 		80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKAPISearchService.m; sourceTree = "<group>"; };
+		80D2DAAE1D33C7EC00D37BC7 /* NKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKRepository.h; sourceTree = "<group>"; };
+		80D2DAAF1D33C7EC00D37BC7 /* NKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKRepository.m; sourceTree = "<group>"; };
+		80D2DAB21D33D05300D37BC7 /* NSArray+SQExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SQExtended.h"; sourceTree = "<group>"; };
+		80D2DAB31D33D05300D37BC7 /* NSArray+SQExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SQExtended.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,8 @@
 		806B2EC11D33323B00410910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				80D2DAB11D33D04C00D37BC7 /* Categories */,
+				80D2DAAC1D33C7A400D37BC7 /* Model */,
 				806B2F211D33927700410910 /* Service */,
 				806B2F091D33529300410910 /* Presenter */,
 				806B2F071D33523800410910 /* View */,
@@ -363,6 +371,32 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		80D2DAAC1D33C7A400D37BC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAAD1D33C7B900D37BC7 /* Plain */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80D2DAAD1D33C7B900D37BC7 /* Plain */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAAE1D33C7EC00D37BC7 /* NKRepository.h */,
+				80D2DAAF1D33C7EC00D37BC7 /* NKRepository.m */,
+			);
+			path = Plain;
+			sourceTree = "<group>";
+		};
+		80D2DAB11D33D04C00D37BC7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAB21D33D05300D37BC7 /* NSArray+SQExtended.h */,
+				80D2DAB31D33D05300D37BC7 /* NSArray+SQExtended.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		BC5EE4ACC9D90E733C97FA3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,8 +551,10 @@
 				806B2F0C1D3352A900410910 /* NKBasePresenter.m in Sources */,
 				806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */,
 				80D2DAA21D3393D900D37BC7 /* NKAPIService.m in Sources */,
+				80D2DAB41D33D05300D37BC7 /* NSArray+SQExtended.m in Sources */,
 				806B2EAB1D33317B00410910 /* main.m in Sources */,
 				806B2F111D33532900410910 /* NKBaseController.m in Sources */,
+				80D2DAB01D33C7EC00D37BC7 /* NKRepository.m in Sources */,
 				806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
