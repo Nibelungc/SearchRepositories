@@ -25,6 +25,7 @@
 		806B2F111D33532900410910 /* NKBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F101D33532900410910 /* NKBaseController.m */; };
 		806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F131D3353FD00410910 /* NKSearchPresenter.m */; };
 		806B2F1D1D338A0500410910 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 806B2F1C1D338A0500410910 /* Localizable.strings */; };
+		806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F1F1D338F1700410910 /* NKSearchAssembly.m */; };
 		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		806B2F1A1D3357ED00410910 /* NKViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewInput.h; sourceTree = "<group>"; };
 		806B2F1B1D3357FA00410910 /* NKViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewOutput.h; sourceTree = "<group>"; };
 		806B2F1C1D338A0500410910 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		806B2F1E1D338F1700410910 /* NKSearchAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKSearchAssembly.h; path = SearchRepositories/Resources/Strings/NKSearchAssembly.h; sourceTree = SOURCE_ROOT; };
+		806B2F1F1D338F1700410910 /* NKSearchAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKSearchAssembly.m; path = SearchRepositories/Resources/Strings/NKSearchAssembly.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 		806B2ECB1D33344400410910 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				806B2F1E1D338F1700410910 /* NKSearchAssembly.h */,
+				806B2F1F1D338F1700410910 /* NKSearchAssembly.m */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				806B2F021D33486300410910 /* NKSearchController.m in Sources */,
 				806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */,
 				806B2F0C1D3352A900410910 /* NKBasePresenter.m in Sources */,
+				806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */,
 				806B2EAB1D33317B00410910 /* main.m in Sources */,
 				806B2F111D33532900410910 /* NKBaseController.m in Sources */,
 				806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */,
