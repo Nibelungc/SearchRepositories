@@ -8,6 +8,7 @@
 
 #import "NKSearchPresenter.h"
 #import "NKSearchViewInput.h"
+#import "NKSearchService.h"
 
 @interface NKSearchPresenter ()
 
@@ -27,6 +28,18 @@
 
 - (void)didStartSearchingByString:(NSString *)string {
     //TODO: Implement start searching
+    @weakify(self)
+    [self.searchService searchRepositoriesWithQueryString:string
+                                               pageNumber:@1
+                                               completion:
+     ^(NSArray<id> * _Nullable results, NSError * _Nullable error) {
+         @strongify(self)
+         if (!error){
+             [self.view didFinishSearchWithResults:results];
+         } else {
+             [self.view didFailSearchWithError:error];
+         }
+     }];
 }
 
 - (void)didTapCellWithItem:(id)item {

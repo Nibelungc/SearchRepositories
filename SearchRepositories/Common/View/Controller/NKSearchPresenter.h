@@ -9,9 +9,13 @@
 #import "NKBasePresenter.h"
 #import "NKSearchViewOutput.h"
 
+@protocol NKSearchService;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NKSearchPresenter : NKBasePresenter <NKSearchViewOutput>
+
+@property (strong, nonatomic) id <NKSearchService> searchService;
 
 @end
 

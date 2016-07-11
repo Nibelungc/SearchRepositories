@@ -8,6 +8,7 @@
 
 #import "NKAPISearchService.h"
 
+static NSString * const kSearchServicePath = @"search";
 static NSString * const kRepositoryPath = @"repositories";
 
 @interface NKAPISearchService ()
@@ -17,6 +18,14 @@ static NSString * const kRepositoryPath = @"repositories";
 @end
 
 @implementation NKAPISearchService
+
+#pragma mark - Initialization
+
+- (instancetype)init {
+    return [super initWithAPIPath:kSearchServicePath];
+}
+
+#pragma mark - Search
 
 - (void)searchRepositoriesWithQueryString:(NSString *)queryString
                                pageNumber:(NSNumber *)pageNumber

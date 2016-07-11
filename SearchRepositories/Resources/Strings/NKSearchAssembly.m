@@ -9,6 +9,7 @@
 #import "NKSearchAssembly.h"
 #import "NKSearchController.h"
 #import "NKSearchPresenter.h"
+#import "NKAPISearchService.h"
 
 @implementation NKSearchAssembly
 
@@ -25,7 +26,13 @@
             configuration:^(TyphoonDefinition *definition) {
                 [definition injectProperty:@selector(view)
                                       with:self.searchView];
+                [definition injectProperty:@selector(searchService)
+                                      with:self.searchService];
             }];
+}
+
+- (NKAPISearchService *)searchService {
+    return [TyphoonDefinition withClass:[NKAPISearchService class]];
 }
 
 @end

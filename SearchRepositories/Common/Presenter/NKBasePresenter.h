@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <libextobjc/EXTScope.h>
 #import "NKViewOutput.h"
 
 NS_ASSUME_NONNULL_BEGIN
