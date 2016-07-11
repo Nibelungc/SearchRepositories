@@ -17,6 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) id <NKViewOutput> presenter;
 
+- (void)configureView;
+
+- (void)showError:(NSError *)error;
+
+- (void)showMessage:(NSString *)message withTitle:(nullable NSString *)title;
+
 @end
 
 NS_ASSUME_NONNULL_END

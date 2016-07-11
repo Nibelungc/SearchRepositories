@@ -24,6 +24,7 @@
 		806B2F0C1D3352A900410910 /* NKBasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F0B1D3352A900410910 /* NKBasePresenter.m */; };
 		806B2F111D33532900410910 /* NKBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F101D33532900410910 /* NKBaseController.m */; };
 		806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F131D3353FD00410910 /* NKSearchPresenter.m */; };
+		806B2F1D1D338A0500410910 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 806B2F1C1D338A0500410910 /* Localizable.strings */; };
 		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		806B2F191D33555400410910 /* NKSearchViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchViewInput.h; sourceTree = "<group>"; };
 		806B2F1A1D3357ED00410910 /* NKViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewInput.h; sourceTree = "<group>"; };
 		806B2F1B1D3357FA00410910 /* NKViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewOutput.h; sourceTree = "<group>"; };
+		806B2F1C1D338A0500410910 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		806B2ECF1D3334AB00410910 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				806B2F1C1D338A0500410910 /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				806B2EF41D33391900410910 /* star@3x.png in Resources */,
 				806B2EF01D33391900410910 /* empty_star@3x.png in Resources */,
+				806B2F1D1D338A0500410910 /* Localizable.strings in Resources */,
 				806B2EB91D33317B00410910 /* LaunchScreen.storyboard in Resources */,
 				806B2EF31D33391900410910 /* star@2x.png in Resources */,
 				806B2EF11D33391900410910 /* fork@2x.png in Resources */,

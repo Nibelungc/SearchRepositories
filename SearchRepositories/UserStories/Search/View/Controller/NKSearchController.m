@@ -25,6 +25,10 @@
     [super viewDidLoad];
 }
 
+- (void)configureView {
+    [super configureView];
+}
+
 #pragma mark - NKSearchViewOutput
 
 - (void)didFailSearchWithError:(NSError *)error {

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  SearchRepositories
+
+  Created by Nikolay Kagala on 11/07/16.
+  Copyright © 2016 Nikolay Kagala. All rights reserved.
+*/
+
+"button_dismiss" = "Dismiss";
+"error_title" = "Oops! Something went wrong";
