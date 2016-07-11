@@ -7,6 +7,7 @@
 //
 
 #import "NKAPISearchService.h"
+#import "NKRepository.h"
 
 static NSString * const kSearchServicePath = @"search";
 static NSString * const kRepositoryPath = @"repositories";
@@ -32,14 +33,17 @@ static NSString * const kRepositoryPath = @"repositories";
                                completion:(NKSearchCompletion)completion {
     [self.currentDataTask cancel];
     NSString* requestString = [NSString stringWithFormat:@"%@?q=%@", kRepositoryPath, queryString];
-    self.currentDataTask = [self dataTaskWithMethod:HTTPMethodGET
-                                            request:requestString
-                                          parametrs:nil
-                                         completion:^(id  _Nullable json, NSError * _Nullable error) {
-                                             //TODO: Parse the json and invoke the completion
-                                         }];
+    self.currentDataTask =
+    [self dataTaskWithMethod:HTTPMethodGET
+                     request:requestString
+                   parametrs:nil
+                  completion:^(id  _Nullable json, NSError * _Nullable error) {
+                      NSArray<NKRepository *>*results = [MTLJSONAdapter modelsOfClass:[NKRepository class]
+                                                                        fromJSONArray:json[@"items"]
+                                                                                error:&error];
+                      completion(results, error);
+                  }];
     [self.currentDataTask resume];
-    
 }
 
 @end

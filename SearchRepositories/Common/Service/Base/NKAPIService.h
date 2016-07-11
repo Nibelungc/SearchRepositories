@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/MTLJSONAdapter.h>
+#import "NSArray+SQExtended.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
