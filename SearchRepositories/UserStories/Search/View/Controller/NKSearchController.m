@@ -9,9 +9,15 @@
 #import "NKSearchController.h"
 #import "NKSearchViewOutput.h"
 
-@interface NKSearchController ()
+static CGFloat const kSearchAsYouTypeDelay = 0.5f;
+
+@interface NKSearchController () <UISearchBarDelegate>
 
 @property (strong, nonatomic) id<NKSearchViewOutput> presenter;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -23,13 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.searchBar.delegate = self;
 }
 
 - (void)configureView {
     [super configureView];
 }
 
-#pragma mark - NKSearchViewOutput
+#pragma mark - NKSearchViewInput
 
 - (void)didFailSearchWithError:(NSError *)error {
     //TODO: Show an error of the search if it wasn't canceled
@@ -37,6 +45,23 @@
 
 - (void)didFinishSearchWithResults:(NSArray <id>*)results {
     //TODO: Show a list of the results
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [NSObject cancelPreviousPerformRequestsWithTarget: self selector: @selector(startSearch) object: nil];
+    [self performSelector: @selector(startSearch) withObject: nil afterDelay: kSearchAsYouTypeDelay];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self startSearch];
+}
+
+#pragma mark - Actions
+
+- (void)startSearch {
+    [self.presenter didStartSearchingByString:self.searchBar.text];
 }
 
 

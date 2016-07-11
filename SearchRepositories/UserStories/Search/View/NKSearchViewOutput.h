@@ -13,9 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol NKSearchViewOutput <NKViewOutput>
 
-- (void)didFailSearchWithError:(NSError *)error;
+@required
 
-- (void)didFinishSearchWithResults:(NSArray <id>*)results;
+- (void)didStartSearchingByString:(NSString *)string;
+
+- (void)didTapCellWithItem:(id)item;
+
+- (void)loadMoreData;
 
 @end
 

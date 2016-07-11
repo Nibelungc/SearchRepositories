@@ -7,11 +7,11 @@
 //
 
 #import "NKBasePresenter.h"
-#import "NKSearchViewInput.h"
+#import "NKSearchViewOutput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NKSearchPresenter : NKBasePresenter <NKSearchViewInput>
+@interface NKSearchPresenter : NKBasePresenter <NKSearchViewOutput>
 
 @end
 

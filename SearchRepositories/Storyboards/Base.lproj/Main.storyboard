@@ -81,6 +81,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="yMt-E7-Vfg"/>
+                    <connections>
+                        <outlet property="searchBar" destination="UwZ-Rc-Nng" id="D05-Wy-qTM"/>
+                        <outlet property="tableView" destination="cyp-RI-INA" id="1RD-7v-gOY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmy-by-1iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

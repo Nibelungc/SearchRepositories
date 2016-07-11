@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "NKBaseController.h"
-#import "NKSearchViewOutput.h"
+#import "NKSearchViewInput.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NKSearchController : NKBaseController <NKSearchViewOutput>
+@interface NKSearchController : NKBaseController <NKSearchViewInput>
 
 @end
 
