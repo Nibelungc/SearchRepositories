@@ -26,6 +26,8 @@
 		806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F131D3353FD00410910 /* NKSearchPresenter.m */; };
 		806B2F1D1D338A0500410910 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 806B2F1C1D338A0500410910 /* Localizable.strings */; };
 		806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F1F1D338F1700410910 /* NKSearchAssembly.m */; };
+		80D2DAA21D3393D900D37BC7 /* NKAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAA11D3393D900D37BC7 /* NKAPIService.m */; };
+		80D2DAAB1D33ACF500D37BC7 /* NKAPISearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */; };
 		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,11 @@
 		806B2F1C1D338A0500410910 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		806B2F1E1D338F1700410910 /* NKSearchAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKSearchAssembly.h; path = SearchRepositories/Resources/Strings/NKSearchAssembly.h; sourceTree = SOURCE_ROOT; };
 		806B2F1F1D338F1700410910 /* NKSearchAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKSearchAssembly.m; path = SearchRepositories/Resources/Strings/NKSearchAssembly.m; sourceTree = SOURCE_ROOT; };
+		80D2DAA01D3393D900D37BC7 /* NKAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKAPIService.h; sourceTree = "<group>"; };
+		80D2DAA11D3393D900D37BC7 /* NKAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKAPIService.m; sourceTree = "<group>"; };
+		80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchService.h; sourceTree = "<group>"; };
+		80D2DAA91D33ACF500D37BC7 /* NKAPISearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKAPISearchService.h; sourceTree = "<group>"; };
+		80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKAPISearchService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,7 @@
 		806B2EC11D33323B00410910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				806B2F211D33927700410910 /* Service */,
 				806B2F091D33529300410910 /* Presenter */,
 				806B2F071D33523800410910 /* View */,
 			);
@@ -327,6 +335,34 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		806B2F211D33927700410910 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAA71D33AC3100D37BC7 /* Search */,
+				80D2DA9E1D3393AB00D37BC7 /* Base */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		80D2DA9E1D3393AB00D37BC7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAA01D3393D900D37BC7 /* NKAPIService.h */,
+				80D2DAA11D3393D900D37BC7 /* NKAPIService.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		80D2DAA71D33AC3100D37BC7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */,
+				80D2DAA91D33ACF500D37BC7 /* NKAPISearchService.h */,
+				80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		BC5EE4ACC9D90E733C97FA3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,10 +511,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */,
+				80D2DAAB1D33ACF500D37BC7 /* NKAPISearchService.m in Sources */,
 				806B2F021D33486300410910 /* NKSearchController.m in Sources */,
 				806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */,
 				806B2F0C1D3352A900410910 /* NKBasePresenter.m in Sources */,
 				806B2F201D338F1700410910 /* NKSearchAssembly.m in Sources */,
+				80D2DAA21D3393D900D37BC7 /* NKAPIService.m in Sources */,
 				806B2EAB1D33317B00410910 /* main.m in Sources */,
 				806B2F111D33532900410910 /* NKBaseController.m in Sources */,
 				806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */,
