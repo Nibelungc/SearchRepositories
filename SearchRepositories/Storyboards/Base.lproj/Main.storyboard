@@ -34,10 +34,51 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fn0-Pu-Ixd" kind="relationship" relationship="rootViewController" id="GfE-UN-1fT"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KI-Pf-D1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="719" y="-120"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="xkZ-2p-tk0">
+            <objects>
+                <viewController id="Fn0-Pu-Ixd" customClass="NKSearchController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YwI-nO-INi"/>
+                        <viewControllerLayoutGuide type="bottom" id="3nf-Lr-uz0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M9J-IH-Oqe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="yMt-E7-Vfg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmy-by-1iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="-120"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="ftn-0F-pev">
+            <objects>
+                <viewController id="g3Z-GM-aau" customClass="NKFavoritesController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1x4-Be-flU"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIw-ae-P4G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4QZ-NV-nS2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="hG6-0u-wpV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmc-5k-aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="541"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="8fg-Fd-1T2">
@@ -50,6 +91,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g3Z-GM-aau" kind="relationship" relationship="rootViewController" id="nfH-HZ-LoZ"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbJ-Wp-4zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

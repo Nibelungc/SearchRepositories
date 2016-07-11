@@ -19,6 +19,8 @@
 		806B2EF31D33391900410910 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EED1D33391900410910 /* star@2x.png */; };
 		806B2EF41D33391900410910 /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EEE1D33391900410910 /* star@3x.png */; };
 		806B2EF61D33393100410910 /* Octocat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EF51D33393100410910 /* Octocat@3x.png */; };
+		806B2F021D33486300410910 /* NKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F011D33486300410910 /* NKSearchController.m */; };
+		806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2F051D334A3700410910 /* NKFavoritesController.m */; };
 		FF7C4E33684FB8591B6884B4 /* libPods-SearchRepositories.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB491FF55C962E57E60FC5B /* libPods-SearchRepositories.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,10 @@
 		806B2EED1D33391900410910 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		806B2EEE1D33391900410910 /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@3x.png"; sourceTree = "<group>"; };
 		806B2EF51D33393100410910 /* Octocat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Octocat@3x.png"; sourceTree = "<group>"; };
+		806B2F001D33486300410910 /* NKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchController.h; sourceTree = "<group>"; };
+		806B2F011D33486300410910 /* NKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKSearchController.m; sourceTree = "<group>"; };
+		806B2F041D334A3700410910 /* NKFavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKFavoritesController.h; sourceTree = "<group>"; };
+		806B2F051D334A3700410910 /* NKFavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKFavoritesController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +120,8 @@
 		806B2EC21D33326900410910 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				806B2EC71D33338800410910 /* Favorites */,
 				806B2EC61D33337B00410910 /* Search */,
+				806B2EC71D33338800410910 /* Favorites */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 		806B2ECA1D33342C00410910 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				806B2F031D334A2100410910 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 		806B2ECD1D33344400410910 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				806B2EFF1D33483D00410910 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +244,24 @@
 				806B2EEE1D33391900410910 /* star@3x.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		806B2EFF1D33483D00410910 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				806B2F001D33486300410910 /* NKSearchController.h */,
+				806B2F011D33486300410910 /* NKSearchController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		806B2F031D334A2100410910 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				806B2F041D334A3700410910 /* NKFavoritesController.h */,
+				806B2F051D334A3700410910 /* NKFavoritesController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BC5EE4ACC9D90E733C97FA3A /* Frameworks */ = {
@@ -385,6 +411,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */,
+				806B2F021D33486300410910 /* NKSearchController.m in Sources */,
+				806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */,
 				806B2EAB1D33317B00410910 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
