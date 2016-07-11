@@ -7,5 +7,6 @@ target 'SearchRepositories' do
 
     pod 'libextobjc/EXTScope', '~> 0.4'
     pod 'Typhoon', '~> 3.4.5'
-
+    pod 'Mantle', '~> 2.0.7'
+    
 end

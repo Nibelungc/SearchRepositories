@@ -2,18 +2,23 @@ PODS:
   - libextobjc/EXTScope (0.4.1):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
   - Typhoon (3.4.9):
     - Typhoon/no-arc (= 3.4.9)
   - Typhoon/no-arc (3.4.9)
 
 DEPENDENCIES:
   - libextobjc/EXTScope (~> 0.4)
+  - Mantle (~> 2.0.7)
   - Typhoon (~> 3.4.5)
 
 SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Typhoon: dbbbdeb868ac1e11908fc3e17b119a976471f07a
 
-PODFILE CHECKSUM: 523349fd13b889d13f7c7fc7b77c23c050594660
+PODFILE CHECKSUM: 8f109095641ce9850bc741a071ff576e0dd2cfd0
 
 COCOAPODS: 1.0.1
