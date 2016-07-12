@@ -15,6 +15,7 @@
 		8062AA3E1D34D51700A01BD1 /* PageLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA391D34D51700A01BD1 /* PageLoading.m */; };
 		8062AA3F1D34D51700A01BD1 /* PageLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA3B1D34D51700A01BD1 /* PageLoadingIndicator.m */; };
 		8062AA431D34F9FB00A01BD1 /* NKBlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA421D34F9FB00A01BD1 /* NKBlankView.m */; };
+		8062AA491D3527DB00A01BD1 /* NKUserDefaultsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA481D3527DB00A01BD1 /* NKUserDefaultsStorage.m */; };
 		806B2EAB1D33317B00410910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAA1D33317B00410910 /* main.m */; };
 		806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAD1D33317B00410910 /* AppDelegate.m */; };
 		806B2EB41D33317B00410910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EB21D33317B00410910 /* Main.storyboard */; };
@@ -60,6 +61,9 @@
 		8062AA3B1D34D51700A01BD1 /* PageLoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoadingIndicator.m; sourceTree = "<group>"; };
 		8062AA411D34F9FB00A01BD1 /* NKBlankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKBlankView.h; sourceTree = "<group>"; };
 		8062AA421D34F9FB00A01BD1 /* NKBlankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBlankView.m; sourceTree = "<group>"; };
+		8062AA451D35279900A01BD1 /* NKLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKLocalStorage.h; sourceTree = "<group>"; };
+		8062AA471D3527DB00A01BD1 /* NKUserDefaultsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUserDefaultsStorage.h; sourceTree = "<group>"; };
+		8062AA481D3527DB00A01BD1 /* NKUserDefaultsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUserDefaultsStorage.m; sourceTree = "<group>"; };
 		806B2EA61D33317B00410910 /* SearchRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806B2EAA1D33317B00410910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		806B2EAC1D33317B00410910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +170,24 @@
 			path = "Blank View";
 			sourceTree = "<group>";
 		};
+		8062AA441D3526D100A01BD1 /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8062AA461D3527CA00A01BD1 /* User Defaults Storage */,
+				8062AA451D35279900A01BD1 /* NKLocalStorage.h */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		8062AA461D3527CA00A01BD1 /* User Defaults Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8062AA471D3527DB00A01BD1 /* NKUserDefaultsStorage.h */,
+				8062AA481D3527DB00A01BD1 /* NKUserDefaultsStorage.m */,
+			);
+			path = "User Defaults Storage";
+			sourceTree = "<group>";
+		};
 		806B2E9D1D33317B00410910 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +240,7 @@
 		806B2EC11D33323B00410910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8062AA441D3526D100A01BD1 /* Local Storage */,
 				80D2DAB11D33D04C00D37BC7 /* Categories */,
 				80D2DAAC1D33C7A400D37BC7 /* Model */,
 				806B2F211D33927700410910 /* Service */,
@@ -643,6 +666,7 @@
 				806B2F111D33532900410910 /* NKBaseController.m in Sources */,
 				80D2DAB01D33C7EC00D37BC7 /* NKRepository.m in Sources */,
 				806B2F141D3353FD00410910 /* NKSearchPresenter.m in Sources */,
+				8062AA491D3527DB00A01BD1 /* NKUserDefaultsStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
