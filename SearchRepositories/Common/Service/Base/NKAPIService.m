@@ -35,7 +35,7 @@ static NSString * const kBaseURL = @"https://api.github.com/";
                                    parametrs:(nullable NSDictionary *)parametrs
                                   completion:(NKAPIServiceRequestCompletion)completion {
     [[self class] setNetworkActivityIndicatorVisible:YES];
-    
+    requestString = [self encodeStringForURL:requestString];
     requestString = [self.serviceURL.absoluteString stringByAppendingPathComponent:requestString];
     NSURL *URL = [NSURL URLWithString:requestString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
@@ -72,6 +72,14 @@ static NSString * const kBaseURL = @"https://api.github.com/";
             return @"GET";
         }
     }
+}
+
+- (NSString *)encodeStringForURL:(NSString *)string{
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (CFStringRef)string,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                 kCFStringEncodingUTF8));
 }
 
 - (nullable NSData *)serializedBodyDataFromParametrs:(nullable NSDictionary *) parametrs {

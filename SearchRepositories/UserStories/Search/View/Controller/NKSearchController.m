@@ -41,6 +41,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 
 - (void)didFailSearchWithError:(NSError *)error {
     //TODO: Show an error of the search if it wasn't canceled
+    [self showError:error];
 }
 
 - (void)didFinishSearchWithResults:(NSArray <id>*)results {
@@ -61,6 +62,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 #pragma mark - Actions
 
 - (void)startSearch {
+    //TODO: Validate search text
     [self.presenter didStartSearchingByString:self.searchBar.text];
 }
 
