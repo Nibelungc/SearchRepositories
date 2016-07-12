@@ -10,6 +10,7 @@
 #import "NKSearchController.h"
 #import "NKSearchPresenter.h"
 #import "NKAPISearchService.h"
+#import "NKUserDefaultsStorage.h"
 
 @implementation NKSearchAssembly
 
@@ -28,11 +29,21 @@
                                       with:self.searchView];
                 [definition injectProperty:@selector(searchService)
                                       with:self.searchService];
+                [definition injectProperty:@selector(localStorage)
+                                      with:self.localStorage];
+                
             }];
 }
 
 - (NKAPISearchService *)searchService {
     return [TyphoonDefinition withClass:[NKAPISearchService class]];
+}
+
+- (NKUserDefaultsStorage *)localStorage {
+    return [TyphoonDefinition withClass:[NKUserDefaultsStorage class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              definition.scope = TyphoonScopeSingleton;
+                          }];
 }
 
 @end

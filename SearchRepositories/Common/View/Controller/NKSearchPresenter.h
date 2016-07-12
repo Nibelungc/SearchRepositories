@@ -10,12 +10,15 @@
 #import "NKSearchViewOutput.h"
 
 @protocol NKSearchService;
+@protocol NKLocalStorage;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NKSearchPresenter : NKBasePresenter <NKSearchViewOutput>
 
 @property (strong, nonatomic) id <NKSearchService> searchService;
+
+@property (strong, nonatomic) id <NKLocalStorage> localStorage;
 
 @end
 
