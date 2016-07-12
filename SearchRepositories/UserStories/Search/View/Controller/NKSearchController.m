@@ -11,6 +11,7 @@
 #import "NKRepositoryDataSource.h"
 #import "NKTableViewCell.h"
 #import "NumberPageLoading.h"
+#import "NKBlankView.h"
 
 static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 
@@ -21,6 +22,8 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) NKBlankView *blankView;
 
 @property (strong, nonatomic) NKRepositoryDataSource *dataSource;
 
@@ -44,10 +47,54 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     self.tableView.delegate = self;
 }
 
+#pragma mark - Configuring view
+
 - (void)configureView {
     [super configureView];
+    [self configureBlankView];
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.backgroundColor = [UIColor clearColor];
     [self.searchBar becomeFirstResponder];
+}
+
+- (void)configureBlankView {
+    NKBlankView *blankView =
+    [[NKBlankView alloc] initWithFrame:CGRectZero
+                   initialStateMessage:NSLocalizedString(@"search_initial_state", nil)
+                          emptyMessage:NSLocalizedString(@"search_empty_state", nil)];
+    [self.view addSubview: blankView];
+    self.blankView = blankView;
+    
+    blankView.translatesAutoresizingMaskIntoConstraints = NO;
+    CGFloat blankHeight = 150.0;
+    CGFloat blankWidth = 250.0;
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[blankView(==height)]"
+                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                             metrics:@{@"height": @(blankHeight)}
+                                               views:NSDictionaryOfVariableBindings(blankView)]];
+    [self.view addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.searchBar
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:blankView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1.0
+                                   constant:8.0]];
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[blankView(==width)]"
+                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                             metrics:@{@"width": @(blankWidth)}
+                                               views:NSDictionaryOfVariableBindings(blankView)]];
+    [self.view addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.searchBar
+                                  attribute:NSLayoutAttributeCenterX
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:blankView
+                                  attribute:NSLayoutAttributeCenterX
+                                 multiplier:1.0
+                                   constant:0.0]];
+    [self.view layoutIfNeeded];
 }
 
 #pragma mark - NKSearchViewInput
@@ -63,6 +110,9 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     if (results == nil) { return; }
     [self.dataSource reloadWithItems:results];
     [self.pageLoading loadingNewPageCompleted:results.count != 0];
+    if (results.count == 0){
+        [self.blankView setStateAndShow:NKBlankViewStateEmpty];
+    }
 }
 
 - (void)didLoadMoreResults:(NSArray <NKRepository *>*)results {
@@ -97,7 +147,10 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     NSString *searchString = self.searchBar.text;
     if ([searchString isEqualToString:@""]){
         [self.dataSource reloadWithItems:@[]];
+        [self.blankView setStateAndShow:NKBlankViewStateInitial];
         return;
+    } else {
+        [self.blankView setHidden:YES animated:YES];
     }
     [self.pageLoading loadingNewPageStarted];
     [self.presenter didStartSearchingByString:searchString];

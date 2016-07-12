@@ -62,8 +62,10 @@
 #pragma mark - Messages
 
 - (void)showError:(NSError *)error {
-    [self showMessage:error.localizedDescription
-            withTitle:NSLocalizedString(@"error_title", nil)];
+    if (!self.presentedViewController){
+        [self showMessage:error.localizedDescription
+                withTitle:NSLocalizedString(@"error_title", nil)];
+    }
 }
 
 - (void)showMessage:(NSString *)message withTitle:(NSString *)title {
