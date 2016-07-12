@@ -7,7 +7,30 @@
 //
 
 #import "NKRepositoryCell.h"
+#import "NKRepository.h"
+
+@interface NKRepositoryCell ()
+
+@end
 
 @implementation NKRepositoryCell
+
+- (void)prepareForReuse {
+
+}
+
+- (void)configureWithItem:(id)item {
+    NSAssert([item isKindOfClass:[NKRepository class]], @"Wrong item passed to Repository cell");
+    NKRepository *repository = (NKRepository *)item;
+    
+    self.fullNameLabel.text = repository.fullName;
+    self.descriptionLabel.text = repository.descr;
+    self.homePageLabel.text = repository.homepage;
+    self.updatedAtLabel.text = repository.updatedAt.description;
+    self.languageLabel.text = repository.language;
+    self.stargazersCountLabel.text = [NSString stringWithFormat:@"%@", repository.stargazersCount];
+    self.forkCountLabel.text = [NSString stringWithFormat:@"%@", repository.forksCount];
+    
+}
 
 @end

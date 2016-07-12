@@ -8,6 +8,8 @@
 
 #import "NKSearchController.h"
 #import "NKSearchViewOutput.h"
+#import "NKRepositoryDataSource.h"
+#import "NKTableViewCell.h"
 
 static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 
@@ -18,6 +20,8 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NKRepositoryDataSource *dataSource;
 
 @end
 
@@ -31,21 +35,32 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [super viewDidLoad];
     
     self.searchBar.delegate = self;
+    self.tableView.dataSource = self.dataSource;
+    self.tableView.estimatedRowHeight = [[self.dataSource repositoryCellClass] standartHeight];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)configureView {
     [super configureView];
+    self.tableView.tableFooterView = [UIView new];
 }
 
 #pragma mark - NKSearchViewInput
 
 - (void)didFailSearchWithError:(NSError *)error {
-    //TODO: Show an error of the search if it wasn't canceled
+    //TODO: Show an error view instead of alert
     [self showError:error];
 }
 
-- (void)didFinishSearchWithResults:(NSArray <id>*)results {
-    //TODO: Show a list of the results
+- (void)didFinishSearchWithResults:(NSArray <NKRepository *>*)results {
+    //TODO: Scroll to top if needed
+    if (results == nil) { return; }
+    [self.dataSource reloadWithItems:results];
+}
+
+- (void)didLoadMoreResults:(NSArray <NKRepository *>*)results {
+    if (results == nil) { return; }
+    [self.dataSource addItems:results];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -64,6 +79,15 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 - (void)startSearch {
     //TODO: Validate search text
     [self.presenter didStartSearchingByString:self.searchBar.text];
+}
+
+#pragma mark - Custom accessors
+
+- (NKRepositoryDataSource *)dataSource {
+    if (!_dataSource){
+        _dataSource = [[NKRepositoryDataSource alloc] initWithTableView:_tableView];
+    }
+    return _dataSource;
 }
 
 

@@ -11,11 +11,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class NKRepository;
+
 @protocol NKSearchViewInput <NKViewInput>
+
+@required
 
 - (void)didFailSearchWithError:(NSError *)error;
 
-- (void)didFinishSearchWithResults:(NSArray <id>*)results;
+- (void)didFinishSearchWithResults:(NSArray <NKRepository *>*)results;
+
+- (void)didLoadMoreResults:(NSArray <NKRepository *>*)results;
 
 @end
 

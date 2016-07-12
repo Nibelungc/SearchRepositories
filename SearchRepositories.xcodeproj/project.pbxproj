@@ -10,6 +10,7 @@
 		8062AA291D34B71E00A01BD1 /* NKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA281D34B71E00A01BD1 /* NKTableViewCell.m */; };
 		8062AA2C1D34B73B00A01BD1 /* NKRepositoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA2B1D34B73B00A01BD1 /* NKRepositoryCell.m */; };
 		8062AA2E1D34B79700A01BD1 /* NKRepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8062AA2D1D34B79700A01BD1 /* NKRepositoryCell.xib */; };
+		8062AA321D34BE1C00A01BD1 /* NKRepositoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA311D34BE1C00A01BD1 /* NKRepositoryDataSource.m */; };
 		806B2EAB1D33317B00410910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAA1D33317B00410910 /* main.m */; };
 		806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAD1D33317B00410910 /* AppDelegate.m */; };
 		806B2EB41D33317B00410910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EB21D33317B00410910 /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		8062AA2A1D34B73B00A01BD1 /* NKRepositoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKRepositoryCell.h; sourceTree = "<group>"; };
 		8062AA2B1D34B73B00A01BD1 /* NKRepositoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKRepositoryCell.m; sourceTree = "<group>"; };
 		8062AA2D1D34B79700A01BD1 /* NKRepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NKRepositoryCell.xib; sourceTree = "<group>"; };
+		8062AA301D34BE1C00A01BD1 /* NKRepositoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKRepositoryDataSource.h; sourceTree = "<group>"; };
+		8062AA311D34BE1C00A01BD1 /* NKRepositoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKRepositoryDataSource.m; sourceTree = "<group>"; };
 		806B2EA61D33317B00410910 /* SearchRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806B2EAA1D33317B00410910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		806B2EAC1D33317B00410910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,16 @@
 				8062AA2D1D34B79700A01BD1 /* NKRepositoryCell.xib */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		8062AA2F1D34BDFD00A01BD1 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				8062AA301D34BE1C00A01BD1 /* NKRepositoryDataSource.h */,
+				8062AA311D34BE1C00A01BD1 /* NKRepositoryDataSource.m */,
+			);
+			name = "Data Source";
+			path = "../Data Source";
 			sourceTree = "<group>";
 		};
 		806B2E9D1D33317B00410910 = {
@@ -337,6 +350,7 @@
 		806B2F071D33523800410910 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8062AA2F1D34BDFD00A01BD1 /* Data Source */,
 				806B2F0E1D33531400410910 /* Controller */,
 				806B2F081D33523800410910 /* Cells */,
 				806B2F1A1D3357ED00410910 /* NKViewInput.h */,
@@ -577,6 +591,7 @@
 				806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */,
 				80D2DAAB1D33ACF500D37BC7 /* NKAPISearchService.m in Sources */,
 				806B2F021D33486300410910 /* NKSearchController.m in Sources */,
+				8062AA321D34BE1C00A01BD1 /* NKRepositoryDataSource.m in Sources */,
 				806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */,
 				8062AA291D34B71E00A01BD1 /* NKTableViewCell.m in Sources */,
 				806B2F0C1D3352A900410910 /* NKBasePresenter.m in Sources */,

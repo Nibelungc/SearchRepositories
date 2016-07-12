@@ -10,12 +10,20 @@
 
 @implementation NKTableViewCell
 
++ (NSString *)nibName {
+    return NSStringFromClass([self class]);
+}
+
 + (NSString *)reusableIdentifier {
     return NSStringFromClass([self class]);
 }
 
 + (CGFloat)standartHeight {
     return 80.0;
+}
+
+- (void)configureWithItem:(id)item {
+    // Implement in subclass
 }
 
 @end

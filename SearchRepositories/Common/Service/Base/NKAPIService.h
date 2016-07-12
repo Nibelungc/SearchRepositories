@@ -30,6 +30,9 @@ typedef NS_ENUM(NSUInteger, HTTPMethod) {
                                      request:(NSString *)requestString
                                    parametrs:(nullable NSDictionary *)parametrs
                                   completion:(NKAPIServiceRequestCompletion)completion;
+
+- (NSString *)encodeStringForURL:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

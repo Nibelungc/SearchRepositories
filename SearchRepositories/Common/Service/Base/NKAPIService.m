@@ -35,7 +35,6 @@ static NSString * const kBaseURL = @"https://api.github.com/";
                                    parametrs:(nullable NSDictionary *)parametrs
                                   completion:(NKAPIServiceRequestCompletion)completion {
     [[self class] setNetworkActivityIndicatorVisible:YES];
-    requestString = [self encodeStringForURL:requestString];
     requestString = [self.serviceURL.absoluteString stringByAppendingPathComponent:requestString];
     NSURL *URL = [NSURL URLWithString:requestString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];

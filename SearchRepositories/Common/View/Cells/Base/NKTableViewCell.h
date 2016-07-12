@@ -10,6 +10,12 @@
 
 @interface NKTableViewCell : UITableViewCell
 
++ (NSString *)nibName;
+
 + (NSString *)reusableIdentifier;
+
++ (CGFloat)standartHeight;
+
+- (void)configureWithItem:(id)item;
 
 @end
