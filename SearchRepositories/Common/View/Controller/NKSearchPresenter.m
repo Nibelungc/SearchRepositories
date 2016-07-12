@@ -14,28 +14,47 @@
 
 @property (weak, nonatomic) id <NKSearchViewInput> view;
 
+@property (copy, nonatomic) NSString *currentQueryString;
+
+@property (assign, nonatomic) NSInteger currentPage;
+
 @end
 
 @implementation NKSearchPresenter
 
 @dynamic view;
 
-#pragma mark - NKSearchViewInput
-
-- (void)viewDidLoad {
-
-}
+#pragma mark - NKSearchViewOutput
 
 - (void)didStartSearchingByString:(NSString *)string {
-    //TODO: Implement start searching
     @weakify(self)
+    self.currentPage = 1;
     [self.searchService searchRepositoriesWithQueryString:string
-                                               pageNumber:@1
+                                               pageNumber:@(self.currentPage)
                                                completion:
      ^(NSArray<id> * _Nullable results, NSError * _Nullable error) {
          @strongify(self)
          if (!error){
+             self.currentQueryString = string;
              [self.view didFinishSearchWithResults:results];
+         } else {
+             if (error.code != NSURLErrorCancelled){
+                 [self.view didFailSearchWithError:error];
+             }
+         }
+     }];
+}
+
+- (void)loadMoreData {
+    @weakify(self)
+    self.currentPage += 1;
+    [self.searchService searchRepositoriesWithQueryString:self.currentQueryString
+                                               pageNumber:@(self.currentPage)
+                                               completion:
+     ^(NSArray<id> * _Nullable results, NSError * _Nullable error) {
+         @strongify(self)
+         if (!error){
+             [self.view didLoadMoreResults:results];
          } else {
              if (error.code != NSURLErrorCancelled){
                  [self.view didFailSearchWithError:error];
@@ -48,8 +67,5 @@
     //TODO: Implement add/remove to favorites logic.
 }
 
-- (void)loadMoreData {
-    //TODO: Implement pagination
-}
 
 @end

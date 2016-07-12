@@ -10,10 +10,11 @@
 #import "NKSearchViewOutput.h"
 #import "NKRepositoryDataSource.h"
 #import "NKTableViewCell.h"
+#import "NumberPageLoading.h"
 
 static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 
-@interface NKSearchController () <UISearchBarDelegate>
+@interface NKSearchController () <UISearchBarDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) id<NKSearchViewOutput> presenter;
 
@@ -22,6 +23,8 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NKRepositoryDataSource *dataSource;
+
+@property (strong, nonatomic) NumberPageLoading *pageLoading;
 
 @end
 
@@ -38,6 +41,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     self.tableView.dataSource = self.dataSource;
     self.tableView.estimatedRowHeight = [[self.dataSource repositoryCellClass] standartHeight];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.delegate = self;
 }
 
 - (void)configureView {
@@ -49,6 +53,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 
 - (void)didFailSearchWithError:(NSError *)error {
     //TODO: Show an error view instead of alert
+    [self.pageLoading loadingNewPageFailed];
     [self showError:error];
 }
 
@@ -56,11 +61,13 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     //TODO: Scroll to top if needed
     if (results == nil) { return; }
     [self.dataSource reloadWithItems:results];
+    [self.pageLoading loadingNewPageCompleted:results.count != 0];
 }
 
 - (void)didLoadMoreResults:(NSArray <NKRepository *>*)results {
     if (results == nil) { return; }
     [self.dataSource addItems:results];
+    [self.pageLoading loadingNewPageCompleted:results.count != 0];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -74,10 +81,20 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [self startSearch];
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.pageLoading needToLoadNewPageForIndexPath:indexPath]){
+        [self.pageLoading loadingNewPageStarted];
+        [self.presenter loadMoreData];
+    }
+}
+
 #pragma mark - Actions
 
 - (void)startSearch {
     //TODO: Validate search text
+    [self.pageLoading loadingNewPageStarted];
     [self.presenter didStartSearchingByString:self.searchBar.text];
 }
 
@@ -90,5 +107,11 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     return _dataSource;
 }
 
+- (NumberPageLoading *)pageLoading {
+    if (!_pageLoading){
+        _pageLoading = [[NumberPageLoading alloc] initWithTableView:_tableView];
+    }
+    return _pageLoading;
+}
 
 @end

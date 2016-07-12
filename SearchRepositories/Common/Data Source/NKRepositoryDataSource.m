@@ -11,6 +11,8 @@
 #import "NKRepository.h"
 #import "NSArray+SQExtended.h"
 
+static NSInteger kNumberOfSections = 1;
+
 @interface NKRepositoryDataSource ()
 
 @property (weak, nonatomic) UITableView *tableView;
@@ -74,6 +76,10 @@
 }
 
 #pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return kNumberOfSections;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;

@@ -33,7 +33,7 @@ static NSString * const kRepositoryPath = @"repositories";
                                completion:(NKSearchCompletion)completion {
     [self.currentDataTask cancel];
     NSString *encodedQuery = [self encodeStringForURL:queryString];
-    NSString *requestString = [NSString stringWithFormat:@"%@?q=%@", kRepositoryPath, encodedQuery];
+    NSString *requestString = [NSString stringWithFormat:@"%@?q=%@&page=%@", kRepositoryPath, encodedQuery, pageNumber];
     self.currentDataTask =
     [self dataTaskWithMethod:HTTPMethodGET
                      request:requestString
