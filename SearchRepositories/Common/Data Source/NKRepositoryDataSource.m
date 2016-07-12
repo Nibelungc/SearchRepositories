@@ -41,6 +41,10 @@ static NSInteger kNumberOfSections = 1;
 
 #pragma mark - Public
 
+- (NSUInteger)countOfItems {
+    return self.items.count;
+}
+
 - (void)addItems:(NSArray <NKRepository *>*)items {
     [self.items addObjectsFromArray:items];
     [self itemsUpdated];

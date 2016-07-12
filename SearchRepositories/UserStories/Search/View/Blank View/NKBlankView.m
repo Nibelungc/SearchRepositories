@@ -76,6 +76,8 @@
         UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
         label.numberOfLines = 0;
         label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontSizeToFitWidth = YES;
+        label.minimumScaleFactor = 0.5;
         [self addSubview:label];
         _messageLabel = label;
         [self updateLabelWithDefaultMessage];

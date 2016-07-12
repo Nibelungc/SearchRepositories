@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (Class)repositoryCellClass;
 
+- (NSUInteger)countOfItems;
+
 @end
 
 NS_ASSUME_NONNULL_END

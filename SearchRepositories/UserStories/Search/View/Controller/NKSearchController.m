@@ -97,11 +97,20 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [self.view layoutIfNeeded];
 }
 
+- (void)prepearForShowingBlankView {
+    if ([self.dataSource countOfItems] != 0){
+        [self.dataSource reloadWithItems:@[]];
+    }
+}
+
 #pragma mark - NKSearchViewInput
 
 - (void)didFailSearchWithError:(NSError *)error {
-    //TODO: Show an error view instead of alert
     [self.pageLoading loadingNewPageFailed];
+    if ([self.dataSource countOfItems] == 0){
+        [self prepearForShowingBlankView];
+        [self.blankView setStateAndShow:NKBlankViewStateError withMessage:error.localizedDescription];
+    }
     [self showError:error];
 }
 
@@ -111,6 +120,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [self.dataSource reloadWithItems:results];
     [self.pageLoading loadingNewPageCompleted:results.count != 0];
     if (results.count == 0){
+        [self prepearForShowingBlankView];
         [self.blankView setStateAndShow:NKBlankViewStateEmpty];
     }
 }
@@ -146,7 +156,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 - (void)startSearch {
     NSString *searchString = self.searchBar.text;
     if ([searchString isEqualToString:@""]){
-        [self.dataSource reloadWithItems:@[]];
+        [self prepearForShowingBlankView];
         [self.blankView setStateAndShow:NKBlankViewStateInitial];
         return;
     } else {
