@@ -24,8 +24,8 @@ static NSString * const kBaseURL = @"https://api.github.com/";
 
 - (instancetype)initWithAPIPath:(NSString *)APIPath {
     if (self = [super init]){
-        _baseUrl = [NSURL URLWithString:kBaseURL];
-        _serviceURL = [_baseUrl URLByAppendingPathComponent:APIPath];
+        _baseURL = [NSURL URLWithString:kBaseURL];
+        _serviceURL = [_baseURL URLByAppendingPathComponent:APIPath];
     }
     return self;
 }
@@ -46,7 +46,13 @@ static NSString * const kBaseURL = @"https://api.github.com/";
                     completionHandler:
      ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
          [[self class] setNetworkActivityIndicatorVisible:NO];
-         completion([self jsonFromSerializedData:data], error);
+         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+         NSDictionary *json = [self jsonFromSerializedData:data];
+         if (httpResponse.statusCode != 200 && !error){
+             NSString *message = json[@"message"] ?: @"Unknown error";
+             error = [self githubErrorWithCode:httpResponse.statusCode message:message];
+         }
+         completion(json, error);
      }];
     return dataTask;
 }
@@ -62,6 +68,17 @@ static NSString * const kBaseURL = @"https://api.github.com/";
 }
 
 #pragma mark - Helpers
+
+- (NSError *)githubErrorWithCode:(NSInteger)code message:(NSString *)message {
+    NSDictionary* params = nil;
+    if (message){
+        params = @{NSLocalizedDescriptionKey : message};
+    }
+    NSString *domain = self.baseURL.host;
+    return [NSError errorWithDomain: domain
+                               code: code
+                           userInfo: params];
+}
 
 #pragma mark -- Request building
 

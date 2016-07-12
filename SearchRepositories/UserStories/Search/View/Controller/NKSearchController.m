@@ -47,6 +47,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 - (void)configureView {
     [super configureView];
     self.tableView.tableFooterView = [UIView new];
+    [self.searchBar becomeFirstResponder];
 }
 
 #pragma mark - NKSearchViewInput
@@ -93,9 +94,13 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 #pragma mark - Actions
 
 - (void)startSearch {
-    //TODO: Validate search text
+    NSString *searchString = self.searchBar.text;
+    if ([searchString isEqualToString:@""]){
+        [self.dataSource reloadWithItems:@[]];
+        return;
+    }
     [self.pageLoading loadingNewPageStarted];
-    [self.presenter didStartSearchingByString:self.searchBar.text];
+    [self.presenter didStartSearchingByString:searchString];
 }
 
 #pragma mark - Custom accessors

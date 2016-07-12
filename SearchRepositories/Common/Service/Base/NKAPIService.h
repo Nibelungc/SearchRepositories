@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, HTTPMethod) {
 
 @property (strong, nonatomic, readonly) NSURLSession *session;
 
-@property (copy, nonatomic, readonly) NSURL *baseUrl;
+@property (copy, nonatomic, readonly) NSURL *baseURL;
 
 - (instancetype)initWithAPIPath:(NSString *)APIPath;
 
