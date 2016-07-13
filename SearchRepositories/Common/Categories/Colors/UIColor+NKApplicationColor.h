@@ -10,4 +10,12 @@
 
 @interface UIColor (NKApplicationColor)
 
++ (UIColor *)nk_blue;
+
++ (UIColor *)nk_gray;
+
++ (UIColor *)nk_lightGray;
+
++ (UIColor *)nk_darkGray;
+
 @end

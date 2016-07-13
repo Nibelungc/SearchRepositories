@@ -12,25 +12,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="jw5-Ry-d6e">
-                    <rect key="frame" x="8" y="33" width="304" height="21"/>
+                    <rect key="frame" x="16" y="33" width="296" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbF-WT-LX9">
-                    <rect key="frame" x="8" y="58" width="304" height="21"/>
+                    <rect key="frame" x="16" y="58" width="296" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-KQ-BJS">
-                    <rect key="frame" x="8" y="83" width="304" height="21"/>
+                    <rect key="frame" x="16" y="83" width="296" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Language" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c70-jb-sP2">
-                    <rect key="frame" x="8" y="112" width="163" height="21"/>
+                    <rect key="frame" x="16" y="112" width="155" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCY-GE-LNq">
-                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                    <rect key="frame" x="16" y="8" width="296" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -73,18 +73,18 @@
                 <constraint firstItem="vbF-WT-LX9" firstAttribute="top" secondItem="jw5-Ry-d6e" secondAttribute="bottom" constant="4" id="7D6-b4-QH0"/>
                 <constraint firstItem="jw5-Ry-d6e" firstAttribute="top" secondItem="bCY-GE-LNq" secondAttribute="bottom" constant="4" id="7wh-kV-OLp"/>
                 <constraint firstAttribute="bottom" secondItem="BCG-5g-Stk" secondAttribute="bottom" constant="8" id="AyS-sl-PbR"/>
-                <constraint firstItem="vbF-WT-LX9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="BMY-o2-I7d"/>
+                <constraint firstItem="vbF-WT-LX9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="BMY-o2-I7d"/>
                 <constraint firstItem="fNN-9n-OqG" firstAttribute="centerY" secondItem="BCG-5g-Stk" secondAttribute="centerY" id="ECH-vQ-Sgv"/>
                 <constraint firstAttribute="trailing" secondItem="BCG-5g-Stk" secondAttribute="trailing" constant="8" id="K0a-si-76w"/>
                 <constraint firstItem="h5m-bx-SOl" firstAttribute="centerY" secondItem="N3e-OO-jXq" secondAttribute="centerY" id="PWk-8s-cNd"/>
-                <constraint firstItem="bCY-GE-LNq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Pt4-Jz-053"/>
-                <constraint firstItem="vDc-KQ-BJS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Rrw-wT-sXb"/>
+                <constraint firstItem="bCY-GE-LNq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Pt4-Jz-053"/>
+                <constraint firstItem="vDc-KQ-BJS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Rrw-wT-sXb"/>
                 <constraint firstItem="jw5-Ry-d6e" firstAttribute="top" secondItem="bCY-GE-LNq" secondAttribute="bottom" constant="4" id="U17-86-f5U"/>
                 <constraint firstItem="fNN-9n-OqG" firstAttribute="leading" secondItem="N3e-OO-jXq" secondAttribute="trailing" constant="8" id="Xss-AP-p0P"/>
                 <constraint firstAttribute="trailing" secondItem="bCY-GE-LNq" secondAttribute="trailing" constant="8" id="ZQf-xj-ktu"/>
                 <constraint firstAttribute="trailing" secondItem="vbF-WT-LX9" secondAttribute="trailing" constant="8" id="boQ-rK-gdm"/>
                 <constraint firstItem="BCG-5g-Stk" firstAttribute="leading" secondItem="fNN-9n-OqG" secondAttribute="trailing" constant="8" id="llJ-HJ-tyo"/>
-                <constraint firstItem="jw5-Ry-d6e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="n7k-lJ-ME8"/>
+                <constraint firstItem="jw5-Ry-d6e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="n7k-lJ-ME8"/>
                 <constraint firstItem="h5m-bx-SOl" firstAttribute="leading" secondItem="c70-jb-sP2" secondAttribute="trailing" constant="8" id="o2x-OG-Guc"/>
                 <constraint firstItem="bCY-GE-LNq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oi1-im-92l"/>
                 <constraint firstItem="vDc-KQ-BJS" firstAttribute="top" secondItem="vbF-WT-LX9" secondAttribute="bottom" constant="4" id="qNR-Mi-bqH"/>
@@ -94,7 +94,7 @@
                 <constraint firstAttribute="trailing" secondItem="jw5-Ry-d6e" secondAttribute="trailing" constant="8" id="uO0-Lp-rji"/>
                 <constraint firstItem="fNN-9n-OqG" firstAttribute="top" secondItem="vDc-KQ-BJS" secondAttribute="bottom" constant="6" id="vrQ-fy-wAf"/>
                 <constraint firstItem="N3e-OO-jXq" firstAttribute="centerY" secondItem="fNN-9n-OqG" secondAttribute="centerY" id="wFC-sS-9NU"/>
-                <constraint firstItem="c70-jb-sP2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="y0H-6R-kAV"/>
+                <constraint firstItem="c70-jb-sP2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="y0H-6R-kAV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
