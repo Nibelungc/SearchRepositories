@@ -89,7 +89,6 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 }
 
 - (void)didFinishSearchWithResults:(NSArray <NKRepository *>*)results {
-    //TODO: Scroll to top if needed
     if (results == nil) { return; }
     [self.dataSource reloadWithItems:results];
     [self.pageLoading loadingNewPageCompleted:results.count != 0];
@@ -97,6 +96,9 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
         [self prepearForShowingBlankView];
         [self.blankView setStateAndShow:NKBlankViewStateEmpty];
     }
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
 }
 
 - (void)didLoadMoreResults:(NSArray <NKRepository *>*)results {
