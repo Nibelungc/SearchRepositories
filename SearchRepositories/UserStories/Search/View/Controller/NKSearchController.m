@@ -123,6 +123,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
     [self startSearch];
 }
 
