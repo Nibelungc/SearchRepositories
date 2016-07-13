@@ -105,6 +105,14 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [self.pageLoading loadingNewPageCompleted:results.count != 0];
 }
 
+- (void)didRemoveItemFromFavorites:(NKRepository *)item {
+    [self.dataSource reloadItem:item];
+}
+
+- (void)didAddItemToFavorites:(NKRepository *)item {
+    [self.dataSource reloadItem:item];
+}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -128,8 +136,6 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.presenter didTapCellWithItem:[self.dataSource itemAtIndexPath:indexPath]];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - Actions

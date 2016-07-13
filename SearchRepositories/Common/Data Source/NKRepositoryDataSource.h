@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)reloadWithItems:(NSArray <NKRepository *>*)items;
 
+- (void)reloadItem:(NKRepository *)item;
+
 - (NKRepository *)itemAtIndexPath:(NSIndexPath *)indexPath;
 
 - (Class)repositoryCellClass;

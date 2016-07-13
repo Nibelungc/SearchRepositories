@@ -47,6 +47,14 @@ static NSInteger kNumberOfSections = 1;
     return self.items.count;
 }
 
+- (void)reloadItem:(NKRepository *)item {
+    NSInteger index = [self.items indexOfObject: item];
+    if (index != NSNotFound){
+        [self.items replaceObjectAtIndex:index withObject:item];
+        [self itemUpdatedAtIndex:index];
+    }
+}
+
 - (void)addItems:(NSArray <NKRepository *>*)items {
     [self.items addObjectsFromArray:items];
     [self itemsUpdated];
@@ -66,6 +74,12 @@ static NSInteger kNumberOfSections = 1;
 }
 
 #pragma mark - Table View
+
+- (void)itemUpdatedAtIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationFade];
+}
 
 - (void)itemsUpdated {
     [self.tableView reloadData];

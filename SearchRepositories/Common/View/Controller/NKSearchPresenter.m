@@ -26,7 +26,15 @@
 
 @dynamic view;
 
+- (void)dealloc {
+    [self removeNotificationObserver];
+}
+
 #pragma mark - NKSearchViewOutput
+
+- (void)viewDidLoad {
+    [self addNotificationsObserver];
+}
 
 - (void)didStartSearchingByString:(NSString *)string {
     @weakify(self)
@@ -66,13 +74,47 @@
 }
 
 - (void)didTapCellWithItem:(id)item {
-    NKRepository *repo = (NKRepository *)item;
     if ([self.localStorage containsItem:item]){
         [self.localStorage removeItem:item];
-        repo.favorite = NO;
     } else {
         [self.localStorage addItem:item];
+    }
+}
+
+#pragma mark - Notifications
+
+- (void)addNotificationsObserver {
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(itemRemovedFromStorage:)
+               name:NKLocalStorageItemDidRemoveNotification
+             object:nil];
+    [nc addObserver:self
+           selector:@selector(itemAddedToStorage:)
+               name:NKLocalStorageItemDidAddNotification
+             object:nil];
+}
+
+- (void)removeNotificationObserver {
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
+}
+
+- (void)itemRemovedFromStorage:(NSNotification *)notification {
+    id item = notification.userInfo[NKLocalStorageItemKey];
+    if ([item isKindOfClass:[NKRepository class]]){
+        NKRepository *repo = (NKRepository *)item;
+        repo.favorite = NO;
+        [self.view didRemoveItemFromFavorites:item];
+    }
+}
+
+- (void)itemAddedToStorage:(NSNotification *)notification {
+    id item = notification.userInfo[NKLocalStorageItemKey];
+    if ([item isKindOfClass:[NKRepository class]]){
+        NKRepository *repo = (NKRepository *)item;
         repo.favorite = YES;
+        [self.view didAddItemToFavorites:item];
     }
 }
 

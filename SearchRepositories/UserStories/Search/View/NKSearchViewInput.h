@@ -23,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)didLoadMoreResults:(NSArray <NKRepository *>*)results;
 
+- (void)didRemoveItemFromFavorites:(NKRepository *)item;
+
+- (void)didAddItemToFavorites:(NKRepository *)item;
+
 @end
 
 NS_ASSUME_NONNULL_END
