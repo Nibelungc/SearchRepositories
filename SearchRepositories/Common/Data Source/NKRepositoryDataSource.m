@@ -83,6 +83,18 @@ static NSInteger kNumberOfSections = 1;
 
 #pragma mark - UITableViewDataSource
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NKRepository *item = [self itemAtIndexPath:indexPath];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.items removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if ([self.delegate respondsToSelector:@selector(dataSource:didRemoveItem:)]){
+            [self.delegate dataSource:self
+                        didRemoveItem:item];
+        }
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return kNumberOfSections;
 }

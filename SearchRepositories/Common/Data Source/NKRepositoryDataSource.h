@@ -10,10 +10,21 @@
 #import <UIKit/UIKit.h>
 
 @class NKRepository;
+@class NKRepositoryDataSource;
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol NKRepositoryDataSourceDelegate <NSObject>
+
+@optional
+
+- (void)dataSource:(NKRepositoryDataSource *)dataSource didRemoveItem:(NKRepository *)repository;
+
+@end
+
 @interface NKRepositoryDataSource : NSObject <UITableViewDataSource>
+
+@property (weak, nonatomic) id <NKRepositoryDataSourceDelegate> delegate;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
 

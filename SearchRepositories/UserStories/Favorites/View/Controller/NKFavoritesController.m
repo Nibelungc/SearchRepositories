@@ -10,7 +10,7 @@
 #import "NKFavoritesViewOutput.h"
 #import "NKRepositoryDataSource.h"
 
-@interface NKFavoritesController () <UITableViewDelegate>
+@interface NKFavoritesController () <UITableViewDelegate, NKRepositoryDataSourceDelegate>
 
 @property (strong, nonatomic) id<NKFavoritesViewOutput> presenter;
 
@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataSource.delegate = self;
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self;
 }
@@ -49,6 +50,12 @@
 
 - (void)showEmptyState {
     [self.dataSource reloadWithItems:@[]];
+}
+
+#pragma mark - NKRepositoryDataSourceDelegate
+
+- (void)dataSource:(NKRepositoryDataSource *)dataSource didRemoveItem:(NKRepository *)repository {
+    [self.presenter removeItemFromFavorites:repository];
 }
 
 #pragma mark - UITableViewDelegate
