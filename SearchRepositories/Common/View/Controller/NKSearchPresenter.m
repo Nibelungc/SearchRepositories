@@ -9,6 +9,8 @@
 #import "NKSearchPresenter.h"
 #import "NKSearchViewInput.h"
 #import "NKSearchService.h"
+#import "NKLocalStorage.h"
+#import "NKRepository.h"
 
 @interface NKSearchPresenter ()
 
@@ -64,7 +66,14 @@
 }
 
 - (void)didTapCellWithItem:(id)item {
-    //TODO: Implement add/remove to favorites logic.
+    NKRepository *repo = (NKRepository *)item;
+    if ([self.localStorage containsItem:item]){
+        [self.localStorage removeItem:item];
+        repo.favorite = NO;
+    } else {
+        [self.localStorage addItem:item];
+        repo.favorite = YES;
+    }
 }
 
 

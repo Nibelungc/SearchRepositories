@@ -36,7 +36,11 @@
 }
 
 - (NKAPISearchService *)searchService {
-    return [TyphoonDefinition withClass:[NKAPISearchService class]];
+    return [TyphoonDefinition withClass:[NKAPISearchService class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(localStorage)
+                                                    with:self.localStorage];
+    }];
 }
 
 - (NKUserDefaultsStorage *)localStorage {

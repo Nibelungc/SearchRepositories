@@ -8,6 +8,7 @@
 
 #import "NKRepositoryCell.h"
 #import "NKRepository.h"
+#import "UIImage+NKApplicationImage.h"
 
 @interface NKRepositoryCell ()
 
@@ -30,7 +31,8 @@
     self.languageLabel.text = repository.language;
     self.stargazersCountLabel.text = [NSString stringWithFormat:@"%@", repository.stargazersCount];
     self.forkCountLabel.text = [NSString stringWithFormat:@"%@", repository.forksCount];
-    
+    UIImage *starImage = repository.isFavorite ? [UIImage nk_star]: [UIImage nk_emptyStar];
+    self.starImageView.image = starImage;
 }
 
 @end

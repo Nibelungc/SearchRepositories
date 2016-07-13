@@ -46,6 +46,9 @@ static NSString * const kRepositoryPath = @"repositories";
                           results = [MTLJSONAdapter modelsOfClass:[NKRepository class]
                                                     fromJSONArray:JSONArray
                                                             error:&parseError];
+                          for (NKRepository *repo in results) {
+                              repo.favorite = [self.localStorage containsItem:repo];
+                          }
                       }
                       dispatch_async(dispatch_get_main_queue(), ^{
                           completion(results, error?:parseError);

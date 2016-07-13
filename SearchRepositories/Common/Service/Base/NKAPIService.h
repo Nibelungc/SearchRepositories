@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/MTLJSONAdapter.h>
 #import "NSArray+SQExtended.h"
+#import "NKLocalStorage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,8 @@ typedef NS_ENUM(NSUInteger, HTTPMethod) {
 @property (strong, nonatomic, readonly) NSURLSession *session;
 
 @property (copy, nonatomic, readonly) NSURL *baseURL;
+
+@property (strong, nonatomic) id <NKLocalStorage> localStorage;
 
 - (instancetype)initWithAPIPath:(NSString *)APIPath;
 

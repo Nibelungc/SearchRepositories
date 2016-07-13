@@ -53,4 +53,10 @@
     return dateFormatter;
 }
 
+- (BOOL)isEqual:(NKRepository *)object {
+    if (self == object) return YES;
+    if (![object isMemberOfClass:self.class]){ return NO; }
+    return [self.identifier isEqual:object.identifier];
+}
+
 @end

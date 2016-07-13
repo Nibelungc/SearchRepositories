@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic, readonly) NSNumber *forksCount;
 
+@property (assign, nonatomic, getter=isFavorite) BOOL favorite;
+
 @end
 
 NS_ASSUME_NONNULL_END

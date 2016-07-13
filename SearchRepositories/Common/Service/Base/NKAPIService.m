@@ -12,11 +12,11 @@ static NSString * const kBaseURL = @"https://api.github.com/";
 
 @interface NKAPIService ()
 
-@property (strong, nonatomic, readwrite) NSURLSession *session;
+@property (strong, nonatomic) NSURLSession *session;
 
-@property (copy, nonatomic, readwrite) NSURL *baseURL;
+@property (copy, nonatomic) NSURL *baseURL;
 
-@property (copy, nonatomic, readwrite) NSURL *serviceURL;
+@property (copy, nonatomic) NSURL *serviceURL;
 
 @end
 

@@ -151,6 +151,13 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.presenter didTapCellWithItem:[self.dataSource itemAtIndexPath:indexPath]];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationFade];
+}
+
 #pragma mark - Actions
 
 - (void)startSearch {
