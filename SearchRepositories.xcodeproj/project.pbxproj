@@ -107,15 +107,15 @@
 		806B2F0B1D3352A900410910 /* NKBasePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBasePresenter.m; sourceTree = "<group>"; };
 		806B2F0F1D33532900410910 /* NKBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKBaseController.h; sourceTree = "<group>"; };
 		806B2F101D33532900410910 /* NKBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBaseController.m; sourceTree = "<group>"; };
-		806B2F121D3353FD00410910 /* NKSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKSearchPresenter.h; path = SearchRepositories/Common/View/Controller/NKSearchPresenter.h; sourceTree = SOURCE_ROOT; };
-		806B2F131D3353FD00410910 /* NKSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKSearchPresenter.m; path = SearchRepositories/Common/View/Controller/NKSearchPresenter.m; sourceTree = SOURCE_ROOT; };
+		806B2F121D3353FD00410910 /* NKSearchPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchPresenter.h; sourceTree = "<group>"; };
+		806B2F131D3353FD00410910 /* NKSearchPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKSearchPresenter.m; sourceTree = "<group>"; };
 		806B2F181D33554300410910 /* NKSearchViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchViewOutput.h; sourceTree = "<group>"; };
 		806B2F191D33555400410910 /* NKSearchViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchViewInput.h; sourceTree = "<group>"; };
 		806B2F1A1D3357ED00410910 /* NKViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewInput.h; sourceTree = "<group>"; };
 		806B2F1B1D3357FA00410910 /* NKViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKViewOutput.h; sourceTree = "<group>"; };
 		806B2F1C1D338A0500410910 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		806B2F1E1D338F1700410910 /* NKSearchAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NKSearchAssembly.h; path = SearchRepositories/Resources/Strings/NKSearchAssembly.h; sourceTree = SOURCE_ROOT; };
-		806B2F1F1D338F1700410910 /* NKSearchAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NKSearchAssembly.m; path = SearchRepositories/Resources/Strings/NKSearchAssembly.m; sourceTree = SOURCE_ROOT; };
+		806B2F1E1D338F1700410910 /* NKSearchAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchAssembly.h; sourceTree = "<group>"; };
+		806B2F1F1D338F1700410910 /* NKSearchAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKSearchAssembly.m; sourceTree = "<group>"; };
 		80D2DAA01D3393D900D37BC7 /* NKAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKAPIService.h; sourceTree = "<group>"; };
 		80D2DAA11D3393D900D37BC7 /* NKAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKAPIService.m; sourceTree = "<group>"; };
 		80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKSearchService.h; sourceTree = "<group>"; };
@@ -164,8 +164,7 @@
 				8062AA301D34BE1C00A01BD1 /* NKRepositoryDataSource.h */,
 				8062AA311D34BE1C00A01BD1 /* NKRepositoryDataSource.m */,
 			);
-			name = "Data Source";
-			path = "../Data Source";
+			path = "Data Source";
 			sourceTree = "<group>";
 		};
 		8062AA331D34D51700A01BD1 /* Page Loading */ = {
@@ -187,8 +186,7 @@
 				8062AA411D34F9FB00A01BD1 /* NKBlankView.h */,
 				8062AA421D34F9FB00A01BD1 /* NKBlankView.m */,
 			);
-			name = "Blank View";
-			path = "../../UserStories/Search/View/Blank View";
+			path = "Blank View";
 			sourceTree = "<group>";
 		};
 		8062AA441D3526D100A01BD1 /* Local Storage */ = {
@@ -197,8 +195,7 @@
 				8062AA461D3527CA00A01BD1 /* User Defaults Storage */,
 				8062AA451D35279900A01BD1 /* NKLocalStorage.h */,
 			);
-			name = "Local Storage";
-			path = "../Local Storage";
+			path = "Local Storage";
 			sourceTree = "<group>";
 		};
 		8062AA461D3527CA00A01BD1 /* User Defaults Storage */ = {
@@ -234,7 +231,7 @@
 				80D2DAB21D33D05300D37BC7 /* NSArray+SQExtended.h */,
 				80D2DAB31D33D05300D37BC7 /* NSArray+SQExtended.m */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8062AA601D35E5A600A01BD1 /* Custom views */ = {
@@ -242,7 +239,7 @@
 			children = (
 				8062AA401D34F9CB00A01BD1 /* Blank View */,
 			);
-			name = "Custom views";
+			path = "Custom views";
 			sourceTree = "<group>";
 		};
 		8062AA611D35EE8000A01BD1 /* Assembly */ = {
@@ -267,9 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				806B2EA81D33317B00410910 /* SearchRepositories */,
-				806B2EA71D33317B00410910 /* Products */,
-				DD6CE8F4647BF10C9B4FAA92 /* Pods */,
 				BC5EE4ACC9D90E733C97FA3A /* Frameworks */,
+				DD6CE8F4647BF10C9B4FAA92 /* Pods */,
+				806B2EA71D33317B00410910 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,8 +315,8 @@
 				8062AA611D35EE8000A01BD1 /* Assembly */,
 				80D2DAB11D33D04C00D37BC7 /* Categories */,
 				80D2DAAC1D33C7A400D37BC7 /* Model */,
-				806B2F211D33927700410910 /* Service */,
 				806B2F091D33529300410910 /* Presenter */,
+				806B2F211D33927700410910 /* Service */,
 				806B2F071D33523800410910 /* View */,
 			);
 			path = Common;
@@ -328,8 +325,8 @@
 		806B2EC21D33326900410910 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				806B2EC61D33337B00410910 /* Search */,
 				806B2EC71D33338800410910 /* Favorites */,
+				806B2EC61D33337B00410910 /* Search */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -403,8 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				806B2F031D334A2100410910 /* Controller */,
-				8062AA5F1D35E58600A01BD1 /* NKFavoritesViewOutput.h */,
 				8062AA5E1D35E57600A01BD1 /* NKFavoritesViewInput.h */,
+				8062AA5F1D35E58600A01BD1 /* NKFavoritesViewOutput.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,8 +428,8 @@
 			isa = PBXGroup;
 			children = (
 				806B2EFF1D33483D00410910 /* Controller */,
-				806B2F181D33554300410910 /* NKSearchViewOutput.h */,
 				806B2F191D33555400410910 /* NKSearchViewInput.h */,
+				806B2F181D33554300410910 /* NKSearchViewOutput.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,8 +437,8 @@
 		806B2ECE1D33349D00410910 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				806B2EF51D33393100410910 /* Octocat@3x.png */,
 				806B2ED01D33373000410910 /* Icons */,
+				806B2EF51D33393100410910 /* Octocat@3x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -488,11 +485,11 @@
 		806B2F071D33523800410910 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8062AA601D35E5A600A01BD1 /* Custom views */,
-				8062AA331D34D51700A01BD1 /* Page Loading */,
-				8062AA2F1D34BDFD00A01BD1 /* Data Source */,
-				806B2F0E1D33531400410910 /* Controller */,
 				806B2F081D33523800410910 /* Cells */,
+				806B2F0E1D33531400410910 /* Controller */,
+				8062AA601D35E5A600A01BD1 /* Custom views */,
+				8062AA2F1D34BDFD00A01BD1 /* Data Source */,
+				8062AA331D34D51700A01BD1 /* Page Loading */,
 				806B2F1A1D3357ED00410910 /* NKViewInput.h */,
 				806B2F1B1D3357FA00410910 /* NKViewOutput.h */,
 			);
@@ -502,8 +499,8 @@
 		806B2F081D33523800410910 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8062AA261D34B70400A01BD1 /* Repository */,
 				8062AA251D34B6F600A01BD1 /* Base */,
+				8062AA261D34B70400A01BD1 /* Repository */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -530,9 +527,9 @@
 			isa = PBXGroup;
 			children = (
 				8062AA651D35EF1100A01BD1 /* Assembly */,
+				80D2DA9E1D3393AB00D37BC7 /* Base */,
 				8062AA441D3526D100A01BD1 /* Local Storage */,
 				80D2DAA71D33AC3100D37BC7 /* Search */,
-				80D2DA9E1D3393AB00D37BC7 /* Base */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -549,9 +546,9 @@
 		80D2DAA71D33AC3100D37BC7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */,
 				80D2DAA91D33ACF500D37BC7 /* NKAPISearchService.h */,
 				80D2DAAA1D33ACF500D37BC7 /* NKAPISearchService.m */,
+				80D2DAA81D33AC5C00D37BC7 /* NKSearchService.h */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -576,9 +573,9 @@
 		80D2DAB11D33D04C00D37BC7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8062AA4A1D35DBF300A01BD1 /* Colors */,
 				8062AA521D35DC2300A01BD1 /* Helpers */,
 				8062AA4E1D35DC0A00A01BD1 /* Images */,
-				8062AA4A1D35DBF300A01BD1 /* Colors */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
