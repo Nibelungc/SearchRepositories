@@ -53,4 +53,8 @@
     return dateFormatter;
 }
 
+- (NSUInteger)hash {
+    return [self.fullName hash];
+}
+
 @end
