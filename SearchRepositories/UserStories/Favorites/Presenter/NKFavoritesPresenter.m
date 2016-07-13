@@ -9,6 +9,7 @@
 #import "NKFavoritesPresenter.h"
 #import "NKFavoritesViewInput.h"
 #import "NKLocalStorage.h"
+#import "NKRepository.h"
 
 @interface NKFavoritesPresenter ()
 
@@ -22,8 +23,18 @@
 
 #pragma mark - NKFavoritesViewOutput
 
-- (void)viewDidLoad {
+- (void)viewWillAppear {
+    NSArray <NKRepository *>* items = [self.localStorage getItemsWithClass:[NKRepository class]];
+    if (items.count > 0){
+        [self.view showItems:items];
+    } else {
+        [self.view showEmptyState];
+    }
+}
 
+- (void)removeItemFromFavorites:(NKRepository *)repository {
+    if (repository == nil) { return; }
+    [self.localStorage removeItem:repository];
 }
 
 @end

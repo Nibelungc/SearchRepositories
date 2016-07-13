@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "NKViewInput.h"
 
+@class NKRepository;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol NKFavoritesViewInput <NKViewInput>
 
 @required
+
+- (void)showItems:(NSArray <NKRepository *>*)items;
+
+- (void)showEmptyState;
 
 @end
 

@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "NKViewOutput.h"
 
+@class NKRepository;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol NKFavoritesViewOutput <NKViewOutput>
 
 @required
+
+- (void)removeItemFromFavorites:(NKRepository *)repository;
 
 @end
 

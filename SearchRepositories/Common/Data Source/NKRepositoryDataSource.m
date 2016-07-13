@@ -37,6 +37,8 @@ static NSInteger kNumberOfSections = 1;
 
 - (void)commonInit {
     [self registerCells];
+    self.tableView.estimatedRowHeight = [[self repositoryCellClass] standartHeight];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 #pragma mark - Public

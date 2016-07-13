@@ -42,8 +42,6 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     
     self.searchBar.delegate = self;
     self.tableView.dataSource = self.dataSource;
-    self.tableView.estimatedRowHeight = [[self.dataSource repositoryCellClass] standartHeight];
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.delegate = self;
 }
 
