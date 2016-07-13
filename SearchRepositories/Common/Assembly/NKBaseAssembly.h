@@ -1,5 +1,5 @@
 //
-//  NKFavoritesAssembly.h
+//  NKBaseAssembly.h
 //  SearchRepositories
 //
 //  Created by Nikolay Kagala on 13/07/16.
@@ -7,9 +7,10 @@
 //
 
 #import <Typhoon/Typhoon.h>
-#import "NKBaseAssembly.h"
+#import "NKServicesAssembly.h"
 
-@interface NKFavoritesAssembly : NKBaseAssembly
+@interface NKBaseAssembly : TyphoonAssembly
 
+@property (strong, nonatomic) NKServicesAssembly *serviceComponents;
 
 @end

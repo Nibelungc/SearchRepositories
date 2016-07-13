@@ -28,26 +28,12 @@
                 [definition injectProperty:@selector(view)
                                       with:self.searchView];
                 [definition injectProperty:@selector(searchService)
-                                      with:self.searchService];
+                                      with:self.serviceComponents.searchService];
                 [definition injectProperty:@selector(localStorage)
-                                      with:self.localStorage];
+                                      with:self.serviceComponents.localStorage];
                 
             }];
 }
 
-- (NKAPISearchService *)searchService {
-    return [TyphoonDefinition withClass:[NKAPISearchService class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(localStorage)
-                                                    with:self.localStorage];
-    }];
-}
-
-- (NKUserDefaultsStorage *)localStorage {
-    return [TyphoonDefinition withClass:[NKUserDefaultsStorage class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              definition.scope = TyphoonScopeSingleton;
-                          }];
-}
 
 @end

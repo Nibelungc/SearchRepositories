@@ -7,7 +7,16 @@
 //
 
 #import "NKBasePresenter.h"
+#import "NKFavoritesViewOutput.h"
 
-@interface NKFavoritesPresenter : NKBasePresenter
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol NKLocalStorage;
+
+@interface NKFavoritesPresenter : NKBasePresenter <NKFavoritesViewOutput>
+
+@property (strong, nonatomic) id <NKLocalStorage> localStorage;
 
 @end
+
+NS_ASSUME_NONNULL_END

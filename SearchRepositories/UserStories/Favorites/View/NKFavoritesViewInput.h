@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NKViewInput.h"
 
-@protocol NKFavoritesViewInput <NSObject>
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol NKFavoritesViewInput <NKViewInput>
+
+@required
 
 @end
+
+NS_ASSUME_NONNULL_END

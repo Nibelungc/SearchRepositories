@@ -7,7 +7,8 @@
 //
 
 #import <Typhoon/Typhoon.h>
+#import "NKBaseAssembly.h"
 
-@interface NKSearchAssembly : TyphoonAssembly
+@interface NKSearchAssembly : NKBaseAssembly
 
 @end

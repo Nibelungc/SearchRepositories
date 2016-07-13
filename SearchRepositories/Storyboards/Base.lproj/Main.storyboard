@@ -116,6 +116,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="hG6-0u-wpV"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ogn-aZ-2CJ" id="n4r-zh-8Ki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmc-5k-aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

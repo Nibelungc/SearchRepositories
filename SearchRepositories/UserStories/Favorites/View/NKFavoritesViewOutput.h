@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NKViewOutput.h"
 
-@protocol NKFavoritesViewOutput <NSObject>
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol NKFavoritesViewOutput <NKViewOutput>
+
+@required
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -7,12 +7,19 @@
 //
 
 #import "NKFavoritesController.h"
+#import "NKFavoritesViewOutput.h"
 
 @interface NKFavoritesController ()
+
+@property (strong, nonatomic) id<NKFavoritesViewOutput> presenter;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation NKFavoritesController
+
+@dynamic presenter;
 
 #pragma mark - Lifecycle
 

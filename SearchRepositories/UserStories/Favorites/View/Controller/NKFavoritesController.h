@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NKBaseController.h"
+#import "NKFavoritesViewInput.h"
 
-@interface NKFavoritesController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface NKFavoritesController : NKBaseController <NKFavoritesViewInput>
 
 @end
+
+NS_ASSUME_NONNULL_END

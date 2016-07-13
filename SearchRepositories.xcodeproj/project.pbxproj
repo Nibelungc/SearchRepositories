@@ -20,6 +20,8 @@
 		8062AA511D35DC1D00A01BD1 /* UIImage+NKApplicationImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA501D35DC1D00A01BD1 /* UIImage+NKApplicationImage.m */; };
 		8062AA561D35E4F600A01BD1 /* NKFavoritesPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA551D35E4F600A01BD1 /* NKFavoritesPresenter.m */; };
 		8062AA5D1D35E53800A01BD1 /* NKFavoritesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA5C1D35E53800A01BD1 /* NKFavoritesAssembly.m */; };
+		8062AA641D35EEA200A01BD1 /* NKBaseAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA631D35EEA200A01BD1 /* NKBaseAssembly.m */; };
+		8062AA681D35EF2300A01BD1 /* NKServicesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8062AA671D35EF2300A01BD1 /* NKServicesAssembly.m */; };
 		806B2EAB1D33317B00410910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAA1D33317B00410910 /* main.m */; };
 		806B2EAE1D33317B00410910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B2EAD1D33317B00410910 /* AppDelegate.m */; };
 		806B2EB41D33317B00410910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806B2EB21D33317B00410910 /* Main.storyboard */; };
@@ -78,6 +80,10 @@
 		8062AA5C1D35E53800A01BD1 /* NKFavoritesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKFavoritesAssembly.m; sourceTree = "<group>"; };
 		8062AA5E1D35E57600A01BD1 /* NKFavoritesViewInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKFavoritesViewInput.h; sourceTree = "<group>"; };
 		8062AA5F1D35E58600A01BD1 /* NKFavoritesViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKFavoritesViewOutput.h; sourceTree = "<group>"; };
+		8062AA621D35EEA200A01BD1 /* NKBaseAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKBaseAssembly.h; sourceTree = "<group>"; };
+		8062AA631D35EEA200A01BD1 /* NKBaseAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKBaseAssembly.m; sourceTree = "<group>"; };
+		8062AA661D35EF2300A01BD1 /* NKServicesAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKServicesAssembly.h; sourceTree = "<group>"; };
+		8062AA671D35EF2300A01BD1 /* NKServicesAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKServicesAssembly.m; sourceTree = "<group>"; };
 		806B2EA61D33317B00410910 /* SearchRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806B2EAA1D33317B00410910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		806B2EAC1D33317B00410910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,7 +197,8 @@
 				8062AA461D3527CA00A01BD1 /* User Defaults Storage */,
 				8062AA451D35279900A01BD1 /* NKLocalStorage.h */,
 			);
-			path = "Local Storage";
+			name = "Local Storage";
+			path = "../Local Storage";
 			sourceTree = "<group>";
 		};
 		8062AA461D3527CA00A01BD1 /* User Defaults Storage */ = {
@@ -236,6 +243,24 @@
 				8062AA401D34F9CB00A01BD1 /* Blank View */,
 			);
 			name = "Custom views";
+			sourceTree = "<group>";
+		};
+		8062AA611D35EE8000A01BD1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8062AA621D35EEA200A01BD1 /* NKBaseAssembly.h */,
+				8062AA631D35EEA200A01BD1 /* NKBaseAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		8062AA651D35EF1100A01BD1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8062AA661D35EF2300A01BD1 /* NKServicesAssembly.h */,
+				8062AA671D35EF2300A01BD1 /* NKServicesAssembly.m */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		806B2E9D1D33317B00410910 = {
@@ -290,7 +315,7 @@
 		806B2EC11D33323B00410910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8062AA441D3526D100A01BD1 /* Local Storage */,
+				8062AA611D35EE8000A01BD1 /* Assembly */,
 				80D2DAB11D33D04C00D37BC7 /* Categories */,
 				80D2DAAC1D33C7A400D37BC7 /* Model */,
 				806B2F211D33927700410910 /* Service */,
@@ -504,6 +529,8 @@
 		806B2F211D33927700410910 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8062AA651D35EF1100A01BD1 /* Assembly */,
+				8062AA441D3526D100A01BD1 /* Local Storage */,
 				80D2DAA71D33AC3100D37BC7 /* Search */,
 				80D2DA9E1D3393AB00D37BC7 /* Base */,
 			);
@@ -710,6 +737,7 @@
 				806B2F021D33486300410910 /* NKSearchController.m in Sources */,
 				8062AA5D1D35E53800A01BD1 /* NKFavoritesAssembly.m in Sources */,
 				8062AA3D1D34D51700A01BD1 /* NumberPageLoading.m in Sources */,
+				8062AA681D35EF2300A01BD1 /* NKServicesAssembly.m in Sources */,
 				8062AA321D34BE1C00A01BD1 /* NKRepositoryDataSource.m in Sources */,
 				806B2F061D334A3700410910 /* NKFavoritesController.m in Sources */,
 				8062AA291D34B71E00A01BD1 /* NKTableViewCell.m in Sources */,
@@ -722,6 +750,7 @@
 				8062AA2C1D34B73B00A01BD1 /* NKRepositoryCell.m in Sources */,
 				80D2DAB41D33D05300D37BC7 /* NSArray+SQExtended.m in Sources */,
 				806B2EAB1D33317B00410910 /* main.m in Sources */,
+				8062AA641D35EEA200A01BD1 /* NKBaseAssembly.m in Sources */,
 				8062AA511D35DC1D00A01BD1 /* UIImage+NKApplicationImage.m in Sources */,
 				8062AA561D35E4F600A01BD1 /* NKFavoritesPresenter.m in Sources */,
 				806B2F111D33532900410910 /* NKBaseController.m in Sources */,

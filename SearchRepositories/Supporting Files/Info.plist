@@ -28,6 +28,7 @@
 	<array>
 		<string>NKSearchAssembly</string>
 		<string>NKFavoritesAssembly</string>
+		<string>NKServicesAssembly</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

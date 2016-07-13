@@ -7,7 +7,23 @@
 //
 
 #import "NKFavoritesPresenter.h"
+#import "NKFavoritesViewInput.h"
+#import "NKLocalStorage.h"
+
+@interface NKFavoritesPresenter ()
+
+@property (weak, nonatomic) id <NKFavoritesViewInput> view;
+
+@end
 
 @implementation NKFavoritesPresenter
+
+@dynamic view;
+
+#pragma mark - NKFavoritesViewOutput
+
+- (void)viewDidLoad {
+
+}
 
 @end
