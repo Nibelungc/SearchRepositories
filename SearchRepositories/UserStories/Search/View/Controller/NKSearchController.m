@@ -140,6 +140,10 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     [self.presenter didTapCellWithItem:[self.dataSource itemAtIndexPath:indexPath]];
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
 #pragma mark - Actions
 
 - (void)startSearch {
