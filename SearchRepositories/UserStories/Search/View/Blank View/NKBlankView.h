@@ -28,6 +28,8 @@ typedef NS_ENUM(NSUInteger, NKBlankViewState) {
 
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated;
 
+- (void)addConstraintsWithTopItem:(id)item;
+
 @end
 
 NS_ASSUME_NONNULL_END

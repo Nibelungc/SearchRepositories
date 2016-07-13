@@ -109,4 +109,39 @@
                                                views:NSDictionaryOfVariableBindings(_messageLabel)]];
 }
 
+- (void)addConstraintsWithTopItem:(id)item {
+    NKBlankView *blankView = self;
+    UIView *view = blankView.superview;
+    blankView.translatesAutoresizingMaskIntoConstraints = NO;
+    CGFloat blankHeight = 150.0;
+    CGFloat blankWidth = 250.0;
+    [view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[blankView(==height)]"
+                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                             metrics:@{@"height": @(blankHeight)}
+                                               views:NSDictionaryOfVariableBindings(blankView)]];
+    [view addConstraint:
+     [NSLayoutConstraint constraintWithItem:item
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:blankView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1.0
+                                   constant:8.0]];
+    [view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[blankView(==width)]"
+                                             options:NSLayoutFormatDirectionLeadingToTrailing
+                                             metrics:@{@"width": @(blankWidth)}
+                                               views:NSDictionaryOfVariableBindings(blankView)]];
+    [view addConstraint:
+     [NSLayoutConstraint constraintWithItem:view
+                                  attribute:NSLayoutAttributeCenterX
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:blankView
+                                  attribute:NSLayoutAttributeCenterX
+                                 multiplier:1.0
+                                   constant:0.0]];
+    [view layoutIfNeeded];
+}
+
 @end

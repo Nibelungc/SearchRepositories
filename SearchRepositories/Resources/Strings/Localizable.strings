@@ -11,3 +11,4 @@
 "search_empty_state" = "We couldn’t find any repositories...";
 "search_initial_state" = "Type something to search...";
 "updated_at_format" = "Updated %@";
+"favorites_empty_state" = "You have no favorites...";

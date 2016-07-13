@@ -45,6 +45,12 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
     self.tableView.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Configuring view
 
 - (void)configureView {
@@ -62,37 +68,7 @@ static CGFloat const kSearchAsYouTypeDelay = 0.5f;
                           emptyMessage:NSLocalizedString(@"search_empty_state", nil)];
     [self.view addSubview: blankView];
     self.blankView = blankView;
-    
-    blankView.translatesAutoresizingMaskIntoConstraints = NO;
-    CGFloat blankHeight = 150.0;
-    CGFloat blankWidth = 250.0;
-    [self.view addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[blankView(==height)]"
-                                             options:NSLayoutFormatDirectionLeadingToTrailing
-                                             metrics:@{@"height": @(blankHeight)}
-                                               views:NSDictionaryOfVariableBindings(blankView)]];
-    [self.view addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.searchBar
-                                  attribute:NSLayoutAttributeBottom
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:blankView
-                                  attribute:NSLayoutAttributeTop
-                                 multiplier:1.0
-                                   constant:8.0]];
-    [self.view addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[blankView(==width)]"
-                                             options:NSLayoutFormatDirectionLeadingToTrailing
-                                             metrics:@{@"width": @(blankWidth)}
-                                               views:NSDictionaryOfVariableBindings(blankView)]];
-    [self.view addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.searchBar
-                                  attribute:NSLayoutAttributeCenterX
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:blankView
-                                  attribute:NSLayoutAttributeCenterX
-                                 multiplier:1.0
-                                   constant:0.0]];
-    [self.view layoutIfNeeded];
+    [self.blankView addConstraintsWithTopItem:self.searchBar];
 }
 
 - (void)prepearForShowingBlankView {
