@@ -10,6 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const NKLocalStorageItemDidRemoveNotification;
+
+extern NSString * const NKLocalStorageItemDidAddNotification;
+
+extern NSString * const NKLocalStorageItemKey;
+
 @protocol NKLocalStorage <NSObject>
 
 @required

@@ -9,11 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "NKUserDefaultsStorage.h"
 
+NSString * const NKLocalStorageItemDidRemoveNotification = @"NKLocalStorageItemDidRemoveNotification";
+
+NSString * const NKLocalStorageItemDidAddNotification = @"NKLocalStorageItemDidAddNotification";
+
+NSString * const NKLocalStorageItemKey = @"NKLocalStorageItemKey";
+
 @interface NKUserDefaultsStorage ()
 
 @property (strong, nonatomic) NSMutableDictionary <NSString*, NSMutableOrderedSet <id>*> *allItems;
 
 @property (strong, nonatomic) NSUserDefaults *defaults;
+
+@property (strong, nonatomic) NSNotificationCenter *notificationCenter;
 
 @end
 
@@ -26,6 +34,7 @@
     if (self) {
         _allItems = [@{} mutableCopy];
         _defaults = [NSUserDefaults standardUserDefaults];
+        _notificationCenter = [NSNotificationCenter defaultCenter];
         [self addNotificationsObserver];
     }
     return self;
@@ -48,12 +57,18 @@
     if (item == nil) { return; }
     NSMutableOrderedSet <id>* items = [self getItemsSetWithClass:[item class]];
     [items addObject:item];
+    [self.notificationCenter postNotificationName:NKLocalStorageItemDidAddNotification
+                                           object:self
+                                         userInfo:@{NKLocalStorageItemKey: item}];
 }
 
 - (void)removeItem:(id)item {
     if (item == nil) { return; }
     NSMutableOrderedSet <id>* items = [self getItemsSetWithClass:[item class]];
     [items removeObject:item];
+    [self.notificationCenter postNotificationName:NKLocalStorageItemDidRemoveNotification
+                                           object:self
+                                         userInfo:@{NKLocalStorageItemKey: item}];
 }
 
 - (nullable NSArray <id>*)getItemsWithClass:(Class)clazz {
